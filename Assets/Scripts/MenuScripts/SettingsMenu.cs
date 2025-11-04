@@ -55,12 +55,5 @@ public class SettingsMenu : MonoBehaviour
     {
         isFullScreen = FullScreenToggle.isOn;
         Screen.SetResolution(selRes[selectedResolution].width, selRes[selectedResolution].height, isFullScreen);
-    }
-
-
-    [SerializeField] GameObject settingsUi;
-    public void CloseSettings()
-    {
-        settingsUi.SetActive(false);
-    }
+    }    
 }

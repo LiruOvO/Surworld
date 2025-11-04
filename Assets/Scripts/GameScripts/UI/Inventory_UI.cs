@@ -9,13 +9,13 @@ public class Inventory_UI : MonoBehaviour
     public Player player;
     public List<Slot_UI> slots = new List<Slot_UI>();
 
-    void Update()
+    /*void Update()
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             ToggleInventory();
         }
-    }
+    }*/
 
     public void ToggleInventory()
     {

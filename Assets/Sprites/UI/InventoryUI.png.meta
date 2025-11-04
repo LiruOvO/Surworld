@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5c251dfefd3341c4db757f148bdbecb4
+guid: 64f9edc0de776eb49aa47f5ee4ed24ae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3233410196364519171
-    second: Grass+Sand2_0
+      213: 7452060249203165287
+    second: InventoryUI_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grass+Sand2_0
+      name: InventoryUI_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,20 +141,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df81198ce8e9023d0800000000000000
-      internalID: -3233410196364519171
+      spriteID: 768409e50590b6760800000000000000
+      internalID: 7452060249203165287
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Grass+Sand2_1
+      name: InventoryUI_1
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,8 +163,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 633bc3dc50ba6fe418196d0f89fee5ce
-      internalID: -129148418
+      spriteID: 1c8842f9001c9814194b4b229a91390e
+      internalID: -653227983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InventoryUI_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 80
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e633a1b6969ff443b5c592f1fdbbc38
+      internalID: -573070620
       vertices: []
       indices: 
       edges: []
@@ -173,7 +195,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e1b725a79a80f3c4298dfdbe1f10cf15
+    spriteID: 201ea1841bf875941bb5f57e1f5b34e5
     internalID: 0
     vertices: []
     indices: 
@@ -183,8 +205,28 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Grass+Sand2_0: -3233410196364519171
-      Grass+Sand2_1: -129148418
+      InventoryUI_0: 7452060249203165287
+      InventoryUI_1: -653227983
+      InventoryUI_10: -2120123353
+      InventoryUI_11: -204772048
+      InventoryUI_12: 703381789
+      InventoryUI_13: -197893482
+      InventoryUI_14: -509340110
+      InventoryUI_15: -1055500011
+      InventoryUI_16: -1912399500
+      InventoryUI_17: 1931585673
+      InventoryUI_18: -289293528
+      InventoryUI_19: -238544930
+      InventoryUI_2: -573070620
+      InventoryUI_20: -474675352
+      InventoryUI_21: -1347792443
+      InventoryUI_3: 1726414653
+      InventoryUI_4: 1031176223
+      InventoryUI_5: -389602643
+      InventoryUI_6: -577625974
+      InventoryUI_7: -1612153548
+      InventoryUI_8: 234005633
+      InventoryUI_9: 144018953
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

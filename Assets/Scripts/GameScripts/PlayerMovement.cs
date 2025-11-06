@@ -1,8 +1,10 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+
+//Пересування гравця
 public class PlayerMovement : MonoBehaviour
-{ //Пересування гравця
+{ 
 
     private float speed = 3f;
     private Vector2 direction;

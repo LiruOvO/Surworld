@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Відображення слотів в інвенторі
 public class Slot_UI : MonoBehaviour
 {
     public Image itemIcon;

@@ -1,6 +1,8 @@
 using UnityEditor;
 using UnityEngine;
 
+
+//Менеджер курсору а також функцій кнопок
 public class GameManager : MonoBehaviour
 {
     public Texture2D cursorTexture;//Дефолтний курсор
@@ -15,22 +17,44 @@ public class GameManager : MonoBehaviour
 
 
     public GameObject inventoryUI;
+    public GameObject inventoryMiniUI;
     private void Update()
     {
         //Відкриття та закриття налаштувань гри
         if (Input.GetKeyDown(KeyCode.Escape))
-        {      
-            inventoryUI.SetActive(false);
+        {
+            if (!settingsUI.activeSelf) inventoryMiniUI.SetActive(false);
+            else inventoryMiniUI.SetActive(true);
+            inventoryUI.SetActive(false);            
             bool state = !settingsUI.activeSelf;
             ShowSettings(state);
         }
+
+        //Зміна курсору для інвентарю та налаштувань 
         if(settingsUI.activeSelf || inventoryUI.activeSelf) Cursor.visible = true; else Cursor.visible = false;
 
-        if (Input.GetKeyDown(KeyCode.Tab))//Відкриття інвентарю
+        //Відкриття інвентарю
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
-            if(settingsUI.activeSelf) settingsUI.SetActive(false);
-            inventoryScript.ToggleInventory();
+
+            ShowInventory();
         }
+        
+    }
+    
+    //Відкриття та закриття інвентарю
+    public void ShowInventory()
+    {
+        if (settingsUI.activeSelf) settingsUI.SetActive(false);
+        if (!inventoryUI.activeSelf) inventoryMiniUI.SetActive(false);
+        else inventoryMiniUI.SetActive(true);
+
+        if (!inventoryUI.activeSelf)
+        {
+            inventoryUI.SetActive(true);
+            inventoryScript.Setup();
+        }
+        else inventoryUI.SetActive(false);
     }
 
 
@@ -38,6 +62,7 @@ public class GameManager : MonoBehaviour
     public void ShowSettings(bool state)
     {
         settingsUI.SetActive(state);
+        inventoryMiniUI.SetActive(!state);
     }
 
     //Кнопка виходу з гри

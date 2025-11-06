@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 64f9edc0de776eb49aa47f5ee4ed24ae
+guid: 8e3834e13d7b91448a3d59bdd633da9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7452060249203165287
-    second: InventoryUI_0
+      213: 939877698072131771
+    second: InventoryUI 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,11 +126,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: InventoryUI_0
+      name: InventoryUI 1_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -141,18 +141,40 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 768409e50590b6760800000000000000
-      internalID: 7452060249203165287
+      spriteID: bb8b6e569cd1b0d00800000000000000
+      internalID: 939877698072131771
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryUI_1
+      name: InventoryUI 1_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 48
+        y: 16
+        width: 144
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5aa3e763317b4044398e056b7afe726d
+      internalID: -2279902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: InventoryUI 1_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -163,20 +185,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1c8842f9001c9814194b4b229a91390e
-      internalID: -653227983
+      spriteID: 68a4134f22f4dcf40a74c4ebdc4428e4
+      internalID: -1843218847
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: InventoryUI_2
+      name: InventoryUI 1_47
       rect:
         serializedVersion: 2
-        x: 32
+        x: 0
         y: 0
-        width: 80
-        height: 64
+        width: 96
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,8 +207,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4e633a1b6969ff443b5c592f1fdbbc38
-      internalID: -573070620
+      spriteID: 91a12fd2ec54d504492648150e4de21a
+      internalID: -879309633
       vertices: []
       indices: 
       edges: []
@@ -195,7 +217,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 201ea1841bf875941bb5f57e1f5b34e5
+    spriteID: 5344964d40c8acb4fa439dca106b17e2
     internalID: 0
     vertices: []
     indices: 
@@ -205,28 +227,59 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      InventoryUI_0: 7452060249203165287
-      InventoryUI_1: -653227983
-      InventoryUI_10: -2120123353
-      InventoryUI_11: -204772048
-      InventoryUI_12: 703381789
-      InventoryUI_13: -197893482
-      InventoryUI_14: -509340110
-      InventoryUI_15: -1055500011
-      InventoryUI_16: -1912399500
-      InventoryUI_17: 1931585673
-      InventoryUI_18: -289293528
-      InventoryUI_19: -238544930
-      InventoryUI_2: -573070620
-      InventoryUI_20: -474675352
-      InventoryUI_21: -1347792443
-      InventoryUI_3: 1726414653
-      InventoryUI_4: 1031176223
-      InventoryUI_5: -389602643
-      InventoryUI_6: -577625974
-      InventoryUI_7: -1612153548
-      InventoryUI_8: 234005633
-      InventoryUI_9: 144018953
+      InventoryUI 1_0: 939877698072131771
+      InventoryUI 1_1: -2279902
+      InventoryUI 1_10: -1843218847
+      InventoryUI 1_11: 1943708020
+      InventoryUI 1_12: -604895434
+      InventoryUI 1_13: 15599694
+      InventoryUI 1_14: -71169874
+      InventoryUI 1_15: 1551095679
+      InventoryUI 1_16: -828959470
+      InventoryUI 1_17: 1084549577
+      InventoryUI 1_18: -1081772412
+      InventoryUI 1_19: -435821908
+      InventoryUI 1_2: -244666506
+      InventoryUI 1_20: -355365705
+      InventoryUI 1_21: 73208945
+      InventoryUI 1_22: -943824098
+      InventoryUI 1_23: -137394861
+      InventoryUI 1_24: 923942134
+      InventoryUI 1_25: -45785162
+      InventoryUI 1_26: 561385271
+      InventoryUI 1_27: -1073633288
+      InventoryUI 1_28: -2071661336
+      InventoryUI 1_29: 417986208
+      InventoryUI 1_3: 329593521
+      InventoryUI 1_30: -985747783
+      InventoryUI 1_31: -2117905912
+      InventoryUI 1_32: 1504991688
+      InventoryUI 1_33: 1575549310
+      InventoryUI 1_34: 573744594
+      InventoryUI 1_35: 1736677830
+      InventoryUI 1_36: -1880101167
+      InventoryUI 1_37: 359194102
+      InventoryUI 1_38: -1244573586
+      InventoryUI 1_39: 1793578554
+      InventoryUI 1_4: -1452712524
+      InventoryUI 1_40: 1548050558
+      InventoryUI 1_41: -2078080604
+      InventoryUI 1_42: 1241237138
+      InventoryUI 1_43: 1539340441
+      InventoryUI 1_44: -90129515
+      InventoryUI 1_45: 1216961991
+      InventoryUI 1_46: 1772890614
+      InventoryUI 1_47: -879309633
+      InventoryUI 1_48: 1124921860
+      InventoryUI 1_49: 1559849096
+      InventoryUI 1_5: -814297721
+      InventoryUI 1_50: 1201056418
+      InventoryUI 1_51: -293860543
+      InventoryUI 1_52: -1319001698
+      InventoryUI 1_6: 145135719
+      InventoryUI 1_7: -498838263
+      InventoryUI 1_8: -1079551371
+      InventoryUI 1_9: -86645539
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

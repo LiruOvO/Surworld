@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Налаштування самого інветаря гравця, додавання предметів та їх видалення
 [System.Serializable]
 public class Inventory
 {
@@ -48,24 +49,26 @@ public class Inventory
 
     }
 
-    public void Add(Collectable item)
+    //Повертає булеве значення чи може предмет бути доданим в інвентар
+    public bool Add(Collectable item)
     {
-        foreach(Slot slot in slots)
+        foreach (Slot slot in slots)
         {
             if (slot.type == item.type && slot.CanAddItem())
             {
                 slot.AddItem(item);
-                return;
+                return true;
             }
         }
 
-        foreach(Slot slot in slots)
+        foreach (Slot slot in slots)
         {
-            if(slot.type == CollectableType.NONE)
+            if (slot.type == CollectableType.NONE)
             {
                 slot.AddItem(item);
-                return;
+                return true;
             }
         }
+        return false;
     }
 }

@@ -30,13 +30,9 @@ public class GameManager : MonoBehaviour
             ShowSettings(state);
         }
 
-        //Зміна курсору для інвентарю та налаштувань 
-        if(settingsUI.activeSelf || inventoryUI.activeSelf) Cursor.visible = true; else Cursor.visible = false;
-
         //Відкриття інвентарю
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-
             ShowInventory();
         }
         

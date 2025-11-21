@@ -12,22 +12,15 @@ public class PlayMenu : MonoBehaviour
     private void Update()
     {
         //Відкриття || закриття налаштувань
-        if (settingsUI.activeSelf && Input.GetKeyDown(KeyCode.Escape)) CloseSettings();
-        else if (mainUI.activeSelf && Input.GetKeyDown(KeyCode.Escape)) OpenSettings();        
+        if (settingsUI.activeSelf && Input.GetKeyDown(KeyCode.Escape)) SettinsControl(false);
+        else if (mainUI.activeSelf && Input.GetKeyDown(KeyCode.Escape)) SettinsControl(true);
     }
 
-    //Відкрити меню налаштувань
-    public void OpenSettings()
+    //Відкрити/закрити меню налаштувань
+    public void SettinsControl(bool state)
     {
-        settingsUI.SetActive(true);
-        mainUI.SetActive(false);
-    }
-
-    //Вийти з меню налаштувань
-    public void CloseSettings()
-    {
-        settingsUI.SetActive(false);
-        mainUI.SetActive(true);
+        settingsUI.SetActive(state);
+        mainUI.SetActive(!state);
     }
 
     public void SoundsChanger()
@@ -44,7 +37,7 @@ public class PlayMenu : MonoBehaviour
         }
     }
 
-    //Кнопка запуску гри
+    //Кнопка запуску гри або меню кастомізації
     public void Play(string sceneName)
     {
         SceneManager.LoadScene(sceneName);

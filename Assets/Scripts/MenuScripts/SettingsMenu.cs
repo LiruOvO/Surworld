@@ -9,14 +9,15 @@ public class SettingsMenu : MonoBehaviour
     //Змінення розширення екрану
     public Toggle FullScreenToggle;
     public TMP_Dropdown ResolutionDropdown;
-    Resolution[] allResolutions;
+    Resolution[] allResolutions;    
+    
     int selectedResolution;
     List<Resolution> selRes = new List<Resolution>();
     bool isFullScreen = true;
 
     private void Start()
     {
-        GetResolution();
+        GetResolution();        
     }
     public void GetResolution()
     {
@@ -43,7 +44,7 @@ public class SettingsMenu : MonoBehaviour
 
         ResolutionDropdown.AddOptions(resStrings);
         ResolutionDropdown.value = currentResIndex;
-        selectedResolution = ResolutionDropdown.value;
+        selectedResolution = ResolutionDropdown.value;        
     }
 
     public void ChangeResolution()

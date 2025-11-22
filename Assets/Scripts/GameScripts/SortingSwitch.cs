@@ -5,7 +5,7 @@ using UnityEngine;
 public class SortingSwitch : MonoBehaviour
 {
     private const int PLAYER_IN_FRONT_ORDER = 3;
-    private const int PLAYER_BEHIND_ORDER = 6;
+    private const int PLAYER_BEHIND_ORDER = 15;
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

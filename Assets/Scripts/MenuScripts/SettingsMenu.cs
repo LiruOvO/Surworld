@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
+//Функціональність усіх кнопок в меню налаштувань
+
 public class SettingsMenu : MonoBehaviour
 {
     //Змінення розширення екрану

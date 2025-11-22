@@ -5,9 +5,20 @@ using UnityEngine;
 //Менеджер курсору а також функцій кнопок
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+
+
     public Texture2D cursorTexture;//Дефолтний курсор
     [SerializeField] private GameObject settingsUI;
     public Inventory_UI inventoryScript;
+
+    public ItemManager itemManager;
+    private void Awake()
+    {
+        instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        itemManager = GetComponent<ItemManager>(); 
+    }
 
     void Start()
     {
@@ -48,7 +59,7 @@ public class GameManager : MonoBehaviour
         if (!inventoryUI.activeSelf)
         {
             inventoryUI.SetActive(true);
-            inventoryScript.Setup();
+            inventoryScript.Refresh();
         }
         else inventoryUI.SetActive(false);
     }

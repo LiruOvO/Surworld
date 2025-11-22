@@ -9,19 +9,10 @@ public class Inventory_UI : MonoBehaviour
     public GameObject inventoryPanel;
     public Player player;
     public List<Slot_UI> slots = new List<Slot_UI>();
-    public List<Slot_UI> slotsMini = new List<Slot_UI>();
-
-    /*void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            ToggleInventory();
-        }
-    }*/
-    
+    public List<Slot_UI> slotsMini = new List<Slot_UI>();    
 
 
-    public void Setup()
+    public void Refresh()
     {        
         if (slots.Count == player.inventory.slots.Count)
         {
@@ -35,8 +26,21 @@ public class Inventory_UI : MonoBehaviour
                 else
                 {
                     slots[i].SetEmpty();
+                    if (i < 7) slotsMini[i].SetEmpty();
                 }                
            }
+        }
+    }
+
+    public void Remove(int slotID)
+    {
+        Collectable itemToDrop = GameManager.instance.itemManager.GetItemByType(player.inventory.slots[slotID].type);
+
+        if (itemToDrop != null)
+        {
+            player.DropItem(itemToDrop);
+            player.inventory.Remove(slotID);
+            Refresh();
         }
     }
 }

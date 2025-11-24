@@ -30,5 +30,7 @@ public class Collectable : MonoBehaviour
 
 public enum CollectableType
 {
-    NONE, TOMATO
+    NONE, PICKAXE, TOMATO
 }
+
+

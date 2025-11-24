@@ -9,9 +9,32 @@ public class Inventory_UI : MonoBehaviour
     public GameObject inventoryPanel;
     public Player player;
     public List<Slot_UI> slots = new List<Slot_UI>();
-    public List<Slot_UI> slotsMini = new List<Slot_UI>();    
+    public List<Slot_UI> slotsMini = new List<Slot_UI>();
 
 
+    private Slot_UI selectedSlot = null;
+    //Виділення натиснутого слота
+    public void HandleSlotSelection(Slot_UI clickedSlot)
+    {
+        //Скидання кольору для всіх слотів
+        foreach (Slot_UI slot in slots)
+        {
+            slot.ResetColor();
+        }
+        foreach (Slot_UI slot in slotsMini)
+        {
+            slot.ResetColor();
+        }
+
+        if (clickedSlot == selectedSlot) selectedSlot = null;//прибирання кольору зі слота
+        else//виділення слота
+        {
+            clickedSlot.SelectColor();
+            selectedSlot = clickedSlot;
+        }
+    }
+
+    //Оновлення ЮІ інвентарю
     public void Refresh()
     {        
         if (slots.Count == player.inventory.slots.Count)
@@ -21,7 +44,10 @@ public class Inventory_UI : MonoBehaviour
                 if (player.inventory.slots[i].type != CollectableType.NONE)
                 {
                     slots[i].SetItem(player.inventory.slots[i]);
-                    if(i<7) slotsMini[i].SetItem(player.inventory.slots[i]);
+                    if (i < 7) 
+                    {
+                        slotsMini[i].SetItem(player.inventory.slots[i]);
+                    }
                 }
                 else
                 {
@@ -32,6 +58,7 @@ public class Inventory_UI : MonoBehaviour
         }
     }
 
+    //Викидання предмету з інвентаря
     public void Remove(int slotID)
     {
         Collectable itemToDrop = GameManager.instance.itemManager.GetItemByType(player.inventory.slots[slotID].type);
@@ -43,4 +70,5 @@ public class Inventory_UI : MonoBehaviour
             Refresh();
         }
     }
+
 }

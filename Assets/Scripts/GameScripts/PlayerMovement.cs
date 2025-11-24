@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         rb.linearVelocity = direction * speed;
     }
 
+    //Ходьба
     public void Move(InputAction.CallbackContext context)
     {
         animator.SetBool("isMoving", true);
@@ -37,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("vertical", direction.y);
     }
 
+    //Біг
     public void Sprint(InputAction.CallbackContext context)
     {
         if (context.performed) speed = 5f;

@@ -13,6 +13,8 @@ public class PlayerPartsAnimation : MonoBehaviour
     public SpriteRenderer trousersRenderer;
     public SpriteRenderer bootsRenderer;
 
+    public SpriteRenderer collectableRenderer;
+
     public Sprite[] head;
     public Sprite[] hands;
     public Sprite[] hair;
@@ -22,7 +24,9 @@ public class PlayerPartsAnimation : MonoBehaviour
     public Sprite[] trousers;
     public Sprite[] boots;
 
-    public PlayerCustomization[] parts;
+    public Sprite[] collectable;
+
+      
 
     private void Start()
     {
@@ -53,5 +57,26 @@ public class PlayerPartsAnimation : MonoBehaviour
         shirtRenderer.sprite = shirt[frameIndex];
         trousersRenderer.sprite = trousers[frameIndex];
         bootsRenderer.sprite = boots[frameIndex];
+    }
+
+    //Анімація для колектіблс
+    public void SetCollectibleSprites(Sprite[] newCollectableSprites)
+    {
+        // Встановлюємо новий масив спрайтів
+        collectable = newCollectableSprites;
+    }
+    public void SetColFrame(int frameIndex)
+    {
+        if (collectable != null && collectable.Length > 0) 
+        {            
+            if (frameIndex >= 0 && frameIndex < collectable.Length)
+            {
+                collectableRenderer.sprite = collectable[frameIndex];
+            }
+        }
+        else
+        {
+            collectableRenderer.sprite = null;
+        }
     }
 }

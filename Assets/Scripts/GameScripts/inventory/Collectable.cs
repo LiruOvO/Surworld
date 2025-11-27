@@ -4,6 +4,7 @@ using UnityEngine;
 public class Collectable : MonoBehaviour
 {
     public CollectableType type;
+    public Sprite[] spritesForAnimation;
     public Sprite icon;
     private Inventory_UI inventoryScript;
 

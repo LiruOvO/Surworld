@@ -14,6 +14,7 @@ public class Inventory
         public int maxAllowed;
 
         public Sprite icon;
+        public Sprite[] spritesForAniimation;
         public Slot()
         {
             type = CollectableType.NONE;
@@ -30,6 +31,7 @@ public class Inventory
 
         public void AddItem(Collectable item)
         {
+            this.spritesForAniimation = item.spritesForAnimation;
             this.type = item.type;
             this.icon = item.icon;
             count++;
@@ -43,6 +45,7 @@ public class Inventory
                 if(count == 0)
                 {
                     icon = null;
+                    spritesForAniimation = null;
                     type = CollectableType.NONE;
                 }
             }

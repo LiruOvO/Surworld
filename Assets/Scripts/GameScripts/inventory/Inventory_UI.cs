@@ -8,6 +8,8 @@ public class Inventory_UI : MonoBehaviour
 {
     public GameObject inventoryPanel;
     public Player player;
+    public PlayerPartsAnimation playerPartsAnimation;
+    public PlayerInteractions interactions;
     public List<Slot_UI> slots = new List<Slot_UI>();
     public List<Slot_UI> slotsMini = new List<Slot_UI>();
 
@@ -26,13 +28,35 @@ public class Inventory_UI : MonoBehaviour
             slot.ResetColor();
         }
 
-        if (clickedSlot == selectedSlot) selectedSlot = null;//прибирання кольору зі слота
+        if (clickedSlot == selectedSlot) {
+            selectedSlot = null;//прибирання кольору зі слота
+            interactions.selectedItem = CollectableType.NONE;
+            playerPartsAnimation.SetCollectibleSprites(null);
+        }
         else//виділення слота
         {
             clickedSlot.SelectColor();
             selectedSlot = clickedSlot;
+            interactions.selectedItem = selectedSlot.slotCollectible; //передає який предмет в руці
+
+            //Передача спрайтів колектібл для аніматора
+            int slotIndex = -1;
+            if (slotsMini.Contains(selectedSlot)) slotIndex = slotsMini.IndexOf(selectedSlot);
+            if (slotIndex != -1 && slotIndex < player.inventory.slots.Count)
+            {
+                Inventory.Slot inventorySlot = player.inventory.slots[slotIndex];
+                if (inventorySlot.spritesForAniimation != null)
+                {
+                    playerPartsAnimation.SetCollectibleSprites(inventorySlot.spritesForAniimation);
+                }
+                else
+                {
+                    playerPartsAnimation.SetCollectibleSprites(null);
+                }
+            }
         }
     }
+
 
     //Оновлення ЮІ інвентарю
     public void Refresh()

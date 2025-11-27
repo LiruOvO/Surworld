@@ -12,7 +12,10 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
 
     private Image uiImage;
     private Inventory_UI inventoryUI;
-    void Start()
+
+    public CollectableType slotCollectible;//зберіягає який предмет в слоті
+
+    void Awake()
     {
         uiImage = GetComponent<Image>();
         inventoryUI = GetComponentInParent<Inventory_UI>();
@@ -27,11 +30,13 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
     }
     public void ResetColor()
     {
+        uiImage = GetComponent<Image>();
         uiImage.color = Color.white;
     }
     public void SelectColor()
     {
-        uiImage.color = Color.black;
+        uiImage = GetComponent<Image>();
+        uiImage.color = Color.black;   
     }
 
 
@@ -40,6 +45,7 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
     {
         if (slot != null)
         {
+            slotCollectible = slot.type;
             itemIcon.sprite =  slot.icon;
             itemIcon.color = new Color(1, 1, 1, 1);
             quantityText.text = slot.count.ToString();
@@ -48,6 +54,7 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
 
     public void SetEmpty()
     {
+        slotCollectible = CollectableType.NONE;
         itemIcon.sprite = null;
         itemIcon.color = new Color(1,1,1,0);
         quantityText.text = "";

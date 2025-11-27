@@ -18,6 +18,7 @@ public class DataManager : MonoBehaviour
     public Sprite[] selectedTrousers;
     public Sprite[] selectedBoots;
 
+
     //Ім'я гравця
     public string playerName;
 
@@ -31,6 +32,7 @@ public class DataManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
     }
+
 
     /*[System.Serializable]
     class SaveData

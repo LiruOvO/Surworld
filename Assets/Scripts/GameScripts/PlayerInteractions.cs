@@ -1,3 +1,5 @@
+using NUnit.Framework.Constraints;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 
 //Анімація для добування ресурсів
@@ -8,6 +10,7 @@ public class PlayerInteractions : MonoBehaviour
     private float maxDistance = 1.5f;
     private Vector2 interactionOffset = new Vector2(0f, -0.6f);
     private Animator animator;
+    public CollectableType selectedItem = CollectableType.NONE;
 
     void Start()
     {
@@ -36,10 +39,11 @@ public class PlayerInteractions : MonoBehaviour
 
                 if (distance <= maxDistance)
                 {
-                    if (resource.type == Resource.ResourceType.Stone) //Для каменю
+                    if (resource.type == Resource.ResourceType.Stone && selectedItem == CollectableType.PICKAXE) //Для каменю
                     {
                         isMining = true;
                         animator.SetBool("isMining", true);
+                        resource.ChangeResourceSprite();
                     }
                 }
             }

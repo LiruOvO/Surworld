@@ -459,12 +459,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1920923164}
     - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SavePlayerCustomization
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: SaveGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: SaveController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912744278362624563, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4186479749562678540, guid: b12cf52131828804689e2dd04a746a90, type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -1007,6 +1035,18 @@ PrefabInstance:
     - target: {fileID: 2756737176080822006, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345730548196850625, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1920923166}
+    - target: {fileID: 3345730548196850625, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetSavings
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345730548196850625, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3447896616671154827, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target

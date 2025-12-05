@@ -671,6 +671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 248022781}
   - component: {fileID: 248022780}
+  - component: {fileID: 248022782}
   m_Layer: 0
   m_Name: Data Manager
   m_TagString: Untagged
@@ -714,6 +715,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &248022782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 248022779}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83ceb5bf4df4e274884b830753d4bb88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &402328308
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -761,6 +774,18 @@ PrefabInstance:
     - target: {fileID: 2756737176080822006, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ChangeResolution
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345730548196850625, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 979047802}
+    - target: {fileID: 3345730548196850625, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResetSavings
+      objectReference: {fileID: 0}
+    - target: {fileID: 3345730548196850625, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingsMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3447896616671154827, guid: 24d4938f27c6c9b4eb3f6ee64e17eb58, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1227,6 +1252,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: PlayerCustomization
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 248022782}
+        m_TargetAssemblyTypeName: SaveController, Assembly-CSharp
+        m_MethodName: LoadDataOnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &633604315

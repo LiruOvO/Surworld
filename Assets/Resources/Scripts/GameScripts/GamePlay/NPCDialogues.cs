@@ -1,5 +1,8 @@
 using TMPro;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class NPCDialogues : MonoBehaviour
 {
@@ -11,6 +14,10 @@ public class NPCDialogues : MonoBehaviour
     public TMP_Text playerName;
     public TMP_Text npcName;
     public TMP_Text conversationArea;
+    public Button mainActionButton;
+
+    Player playerScript;
+    Inventory_UI inventory_UI;
 
     private void Awake()
     {
@@ -19,29 +26,30 @@ public class NPCDialogues : MonoBehaviour
 
     public void TalkTo(string NPCName, GameObject player)
     {
-        Player playerScript = player.GetComponent<Player>();
-        Inventory_UI inventory_UI = FindFirstObjectByType<Inventory_UI>();
+        mainActionButton.onClick.RemoveAllListeners();
+        playerScript = player.GetComponent<Player>();
+        inventory_UI = FindFirstObjectByType<Inventory_UI>();
+
         if (NPCName == "NPC_Jolie")
         {
             switch(dialogue)
             {
-                case 0: 
+                case 0:
+                    mainActionButton.onClick.AddListener(CloseDialogue);
                     dialogueArea.SetActive(true);
                     playerName.text = DataManager.Instance.playerName;
                     npcName.text = NPCName;
                     conversationArea.text = dialogueLines[0];
-
-                    Collectable[] tools = new Collectable[2]; 
-                    tools[0]= ItemManager.Instance.GetItemByType(CollectableType.WOODEN_PICKAXE);
-                    tools[1] = ItemManager.Instance.GetItemByType(CollectableType.STONE_PICKAXE);
-                    playerScript.inventory.Add(tools[0]);
-                    playerScript.inventory.Add(tools[1]);
-                    inventory_UI.Refresh();
+                    GiveItem(CollectableType.WOODEN_PICKAXE);
                     dialogue++;
                     SaveDialogue();
                     break;
                 case 1:
-
+                    mainActionButton.onClick.AddListener(GoToTheSaloon);
+                    dialogueArea.SetActive(true);
+                    playerName.text = DataManager.Instance.playerName;
+                    npcName.text = NPCName;
+                    conversationArea.text = dialogueLines[1];                    
                     break;
             }
         }
@@ -49,7 +57,13 @@ public class NPCDialogues : MonoBehaviour
 
     public void CloseDialogue()
     {
-        dialogueArea.SetActive(false);
+       dialogueArea.SetActive(false);
+    }
+    public void GiveItem(CollectableType item)
+    {
+        Collectable tools = ItemManager.Instance.GetItemByType(item);
+        playerScript.inventory.Add(tools);
+        inventory_UI.Refresh();
     }
 
     public void SaveDialogue()
@@ -63,5 +77,14 @@ public class NPCDialogues : MonoBehaviour
         string saveKey = "DialogueState_" + gameObject.name;
         int savedState = PlayerPrefs.GetInt(saveKey, 0);
         dialogue = (byte)savedState;
+    }
+
+    //Äëÿ Äæîë³
+    public void GoToTheSaloon()
+    {
+        dialogueArea.SetActive(false);
+        SaveController saveController = Object.FindFirstObjectByType<SaveController>();
+        saveController.SaveGame();
+        SceneManager.LoadScene(1);        
     }
 }

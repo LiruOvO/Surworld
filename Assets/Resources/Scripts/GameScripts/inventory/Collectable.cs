@@ -24,7 +24,6 @@ public class Collectable : MonoBehaviour
             if (addedSuccessfully)
             {
                 inventoryScript.Refresh();
-                var chunk = new ChunkableEntity();
                 Destroy(this.gameObject);
             }
         }        

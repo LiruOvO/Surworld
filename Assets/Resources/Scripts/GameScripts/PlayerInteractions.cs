@@ -14,9 +14,7 @@ public class PlayerInteractions : MonoBehaviour
 
     void Start()
     {
-        dialogues = FindFirstObjectByType<NPCDialogues>();
         animator = GetComponent<Animator>();
-        dialogues.TalkTo("NPC_Jolie", this.gameObject);
     }
     private void Update()
     {
@@ -48,6 +46,11 @@ public class PlayerInteractions : MonoBehaviour
                         resource.ChangeResourceSprite();
                     }
                 }
+            }
+            if (hitCollider.tag == "NPC")
+            {
+                NPCDialogues dialogues = FindFirstObjectByType<NPCDialogues>();
+                dialogues.TalkTo(hitCollider.name, this.gameObject);
             }
         }
         else

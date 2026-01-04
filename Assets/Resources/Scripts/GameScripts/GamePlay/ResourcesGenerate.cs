@@ -8,18 +8,24 @@ public class ResourcesGenerate : MonoBehaviour
 
     private void Start()
     {
-
         StartCoroutine(SpawnResource());
     }
 
     private IEnumerator SpawnResource()
     {
-        yield return new WaitForSeconds(3);
-        Resource itemPrefab = ItemManager.Instance.GetItemByType(resourceType);
-        foreach (GameObject res in resSP)
-        {          
-            if(res.transform.childCount == 0) Instantiate(itemPrefab, res.transform.position, Quaternion.identity, res.transform);
+        while (true)
+        {
+            Resource itemPrefab = ItemManager.Instance.GetItemByType(resourceType);
 
+            foreach (GameObject res in resSP)
+            {
+                if (res.transform.childCount == 0)
+                {
+                    Instantiate(itemPrefab, res.transform.position, Quaternion.identity, res.transform);
+                }
+            }
+
+            yield return new WaitForSeconds(10);
         }
     }
 

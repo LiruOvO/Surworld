@@ -73,8 +73,8 @@ public class SettingsMenu : MonoBehaviour
         if (File.Exists(saveLocation))
         {
             File.Delete(saveLocation);
-            SceneManager.LoadScene(0);
         }
+        SceneManager.LoadScene(0);
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
     }

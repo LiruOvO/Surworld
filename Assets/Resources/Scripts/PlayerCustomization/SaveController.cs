@@ -112,8 +112,9 @@ public class SaveController : MonoBehaviour
     {
         SaveGame();
     }
+
     //«бер≥гаЇ назви спрайт≥в гравц€
-    private string[] SpritesToNames(Sprite[] sprites, string folder)
+    public static string[] SpritesToNames(Sprite[] sprites, string folder)
     {
         string[] names = new string[sprites.Length];
         for (int i = 0; i < sprites.Length; i++)

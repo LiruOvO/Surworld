@@ -27,6 +27,10 @@ public class WorldStorage : MonoBehaviour
     public void SaveWorld()
     {
         WorldSaveData world = new();
+        //збереження часу в грі
+        DayNightCycle dayNight = FindFirstObjectByType<DayNightCycle>();
+        if (dayNight != null) world.worldTime = dayNight.currentTime;
+
         foreach (var entity in FindObjectsOfType<ChunkableEntity>())
         {
             if (entity.IsDestroyed) continue;
@@ -59,6 +63,10 @@ public class WorldStorage : MonoBehaviour
 
         string json = File.ReadAllText(SavePath);
         WorldSaveData world = JsonUtility.FromJson<WorldSaveData>(json);
+
+        //завантаження часу в грі
+        DayNightCycle dayNight = FindFirstObjectByType<DayNightCycle>();
+        if (dayNight != null) dayNight.currentTime = world.worldTime;
 
         int maxID = world.entities.Any() ? world.entities.Max(e => e.uniqueID) : 0;
         int maxInitialID = initialEntities.Any() ? initialEntities.Keys.Max() : 0;
@@ -110,6 +118,7 @@ public class WorldStorage : MonoBehaviour
     [System.Serializable]
     public class WorldSaveData
     {
+        public float worldTime;
         public List<SavedEntity> entities = new();
     }
 }

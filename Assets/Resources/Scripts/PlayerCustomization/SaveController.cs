@@ -36,8 +36,14 @@ public class SaveController : MonoBehaviour
             saveData.playerInventory = player.inventory;
         }
 
+        //ім'я
         saveData.playerName = DataManager.Instance.playerName;
 
+        //здоров'я та їжа
+        saveData.health = playerObject.GetComponent<HealthManager>().currentHealth;
+        saveData.hunger = playerObject.GetComponent<HungerManager>().currentHunger;
+
+        //зовнішність
         saveData.hairSprites = SpritesToNames(DataManager.Instance.selectedHair, "Hair");
         saveData.eyesSprites = SpritesToNames(DataManager.Instance.selectedEyes, "Eyes");
         saveData.eyebrowsSprites = SpritesToNames(DataManager.Instance.selectedEyebrows, "Eyebrows");
@@ -70,6 +76,16 @@ public class SaveController : MonoBehaviour
             if (playerObject != null) playerObject.transform.position = saveData.playerPosition;
             var dm = DataManager.Instance;
 
+            //здоров'я та їжа
+            HealthManager hm = playerObject.GetComponent<HealthManager>();
+            HungerManager hnm = playerObject.GetComponent<HungerManager>();
+            hm.currentHealth = saveData.health;
+            hnm.currentHunger = saveData.hunger;
+            hm.healthSlider.value = saveData.health;
+            hnm.hungerSlider.value = saveData.hunger;
+
+
+            //зовнішність
             dm.playerName = saveData.playerName;
             dm.selectedHair = NamesToSprites(saveData.hairSprites);
             dm.selectedEyes = NamesToSprites(saveData.eyesSprites);

@@ -1,4 +1,5 @@
 using System.IO;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -65,6 +66,29 @@ public class GameManager : MonoBehaviour
         settingsUI.SetActive(state);
         inventoryMiniUI.SetActive(!state);
     }
+
+
+
+    //Функція вфдкриття та закритта кастомізації гравця
+    public GameObject playerCustUi;
+    public void ShowPlayerCustomization(bool state)
+    {
+        playerCustUi.SetActive(state);
+        inventoryMiniUI.SetActive(!state);
+    }
+    //Збереження кастомізації гравця
+    public PlayerCustomization[] parts;
+
+    public void SavePlayerCustomization()
+    {
+        foreach (var part in parts)
+        {
+            part.SaveSelectedOption();
+        }
+        PlayerPartsAnimation saveParts = FindFirstObjectByType<PlayerPartsAnimation>();
+        saveParts.SaveAll();
+    }
+
 
     //Кнопка виходу з гри
     public void ExitGame()

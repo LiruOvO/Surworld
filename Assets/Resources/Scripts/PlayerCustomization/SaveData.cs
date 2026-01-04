@@ -19,4 +19,7 @@ public class SaveData
     public string[] bootsSprites;
 
     public Inventory playerInventory;
+
+    public float health;
+    public float hunger;
 }

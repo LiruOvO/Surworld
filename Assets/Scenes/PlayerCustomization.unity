@@ -406,6 +406,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerCustomizationUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1934209600344168001, guid: b12cf52131828804689e2dd04a746a90, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2864120292063812637, guid: b12cf52131828804689e2dd04a746a90, type: 3}
       propertyPath: m_Pivot.x
       value: 0

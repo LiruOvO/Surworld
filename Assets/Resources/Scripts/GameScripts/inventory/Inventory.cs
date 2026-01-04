@@ -41,10 +41,10 @@ public class Inventory
 
         public void RemoveItem()
         {
-            if(count > 0)
+            if (count > 0)
             {
                 count--;
-                if(count == 0)
+                if (count == 0)
                 {
                     icon = null;
                     spritesForAniimation = null;
@@ -58,8 +58,9 @@ public class Inventory
     public List<Slot> slots = new List<Slot>();
 
 
-    public Inventory(int numSlots) { 
-        for(int i =0; i<numSlots; i++)
+    public Inventory(int numSlots)
+    {
+        for (int i = 0; i < numSlots; i++)
         {
             Slot slot = new Slot();
             slots.Add(slot);
@@ -97,5 +98,17 @@ public class Inventory
     public void Remove(int index)
     {
         slots[index].RemoveItem();
+    }
+
+    //Повністю очищає інвентар
+    public void ClearInventory()
+    {
+        foreach (Slot slot in slots)
+        {
+            slot.count = 0;
+            slot.type = CollectableType.NONE;
+            slot.icon = null;
+            slot.spritesForAniimation = null;
+        }
     }
 }

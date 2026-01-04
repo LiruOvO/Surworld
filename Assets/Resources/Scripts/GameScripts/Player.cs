@@ -25,4 +25,7 @@ public class Player : MonoBehaviour
         Vector3 spawnOffset = new Vector3(Random.Range(-0.2f, 0.2f), Random.Range(-1.3f,-1.5f), 0f);
         Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity, collectablesParent);
     }
+
+    
+    
 }

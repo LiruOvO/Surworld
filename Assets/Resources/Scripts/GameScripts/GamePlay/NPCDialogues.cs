@@ -19,6 +19,9 @@ public class NPCDialogues : MonoBehaviour
     Player playerScript;
     Inventory_UI inventory_UI;
 
+
+    public GameManager gameManager;
+
     private void Awake()
     {
         LoadDialogue();
@@ -83,8 +86,14 @@ public class NPCDialogues : MonoBehaviour
     public void GoToTheSaloon()
     {
         dialogueArea.SetActive(false);
+        gameManager.ShowPlayerCustomization(true);
+    }
+
+    public void SaveChanges()
+    {
         SaveController saveController = Object.FindFirstObjectByType<SaveController>();
         saveController.SaveGame();
-        SceneManager.LoadScene(1);        
+        gameManager.ShowPlayerCustomization(false);
+        gameManager.SavePlayerCustomization();
     }
 }

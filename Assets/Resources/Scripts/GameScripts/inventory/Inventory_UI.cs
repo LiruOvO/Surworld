@@ -39,9 +39,25 @@ public class Inventory_UI : MonoBehaviour
             selectedSlot = clickedSlot;
             interactions.selectedItem = selectedSlot.slotCollectible; //передає який предмет в руці
 
-            //Передача спрайтів колектібл для аніматора
             int slotIndex = -1;
             if (slotsMini.Contains(selectedSlot)) slotIndex = slotsMini.IndexOf(selectedSlot);
+
+            //Якщо в слоту їжа то з'їсти її
+            if (selectedSlot.slotCollectible != CollectableType.NONE)
+            {
+                Collectable itemData = ItemManager.Instance.GetItemByType(selectedSlot.slotCollectible);
+                bool canBeEaten = itemData.isConsumable;
+                if (canBeEaten)
+                {
+                    int nutrition = itemData.foodToRecover;
+                    player.GetComponent<HungerManager>().Eat(nutrition);
+                    player.inventory.Remove(slotIndex);
+                    Refresh();
+                    return;
+                }
+            }
+
+            //Передача спрайтів колектібл для аніматора            
             if (slotIndex != -1 && slotIndex < player.inventory.slots.Count)
             {
                 Inventory.Slot inventorySlot = player.inventory.slots[slotIndex];

@@ -15,14 +15,29 @@ public class ResourcesGenerate : MonoBehaviour
     private IEnumerator SpawnResource()
     {
         while (true)
-        {     
-            foreach (GameObject res in resSP)
+        {
+            Resource isDestroyed = ItemManager.Instance.GetItemByType(resourceType);
+            if (isDestroyed.shouldBeDestroyed)
             {
-                if (res.transform.childCount == 0)
+                foreach (GameObject res in resSP)
                 {
-                    StartCoroutine(SpawnRes(res));
+                    if (res.transform.childCount == 0)
+                    {
+                        StartCoroutine(SpawnRes(res));
+                    }
                 }
             }
+            else
+            {
+                foreach (GameObject res in resSP)
+                {
+                    if (res.transform.childCount == 0)
+                    {
+                        StartCoroutine(ChangeSprite(isDestroyed.sprites));
+                    }
+                }
+            }
+            
 
             yield return new WaitForSeconds(10);
         }
@@ -36,4 +51,12 @@ public class ResourcesGenerate : MonoBehaviour
         Instantiate(itemPrefab, res.transform.position, Quaternion.identity, res.transform);
     }
 
-}
+    private IEnumerator ChangeSprite(Sprite[] sprites)
+    {
+        float delay = Random.Range(1f, 5f);
+        yield return new WaitForSeconds(delay);
+        Resource itemPrefab = ItemManager.Instance.GetItemByType(resourceType);
+        itemPrefab.GetComponent<SpriteRenderer>().sprite = sprites[0];
+    }
+
+    }

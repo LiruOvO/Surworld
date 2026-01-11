@@ -5,12 +5,10 @@ using UnityEngine;
 
 public class PlayerInteractions : MonoBehaviour
 {
-    private bool isMining = false;
     private float maxDistance = 1.5f;
     private Vector2 interactionOffset = new Vector2(0f, -0.6f);
     private Animator animator;
     public CollectableType selectedItem = CollectableType.NONE;
-    NPCDialogues dialogues;
 
     void Start()
     {
@@ -39,11 +37,13 @@ public class PlayerInteractions : MonoBehaviour
 
                 if (distance <= maxDistance)
                 {
-                    if (resource.CanInteractWith(selectedItem))
+                    if (resource.CanInteractWith(selectedItem) && resource.shouldBeDestroyed)
                     {
-                        isMining = true;
                         animator.SetBool("isMining", true);
-                        resource.ChangeResourceSprite();
+                        resource.ChangeResourceSprite(true);
+                    }else if (!resource.shouldBeDestroyed)
+                    {
+                        resource.ChangeResourceSprite(false);
                     }
                 }
             }
@@ -55,7 +55,6 @@ public class PlayerInteractions : MonoBehaviour
         }
         else
         {
-            isMining = false;
             animator.SetBool("isMining", false);
         }
     }
@@ -63,7 +62,6 @@ public class PlayerInteractions : MonoBehaviour
     //—кидаЇ стан в ан≥матор≥
     public void OnAnimEnd()
     {
-        isMining = false;
         animator.SetBool("isMining", false);
     }
 }

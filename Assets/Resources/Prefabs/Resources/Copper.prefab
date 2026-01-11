@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2858602378780134355}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.63, y: 2.92, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -106,8 +106,9 @@ MonoBehaviour:
   - {fileID: 606592625336943909, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   - {fileID: 813674105352346777, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   - {fileID: 1519986222, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
-  itemToDropType: 6
+  itemToDropType: 5
   requiredTools: 0200000003000000
+  shouldBeDestroyed: 1
 --- !u!61 &58912985390750561
 BoxCollider2D:
   m_ObjectHideFlags: 0

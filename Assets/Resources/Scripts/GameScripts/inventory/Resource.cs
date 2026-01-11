@@ -15,6 +15,8 @@ public class Resource : MonoBehaviour
     private float cooldownTime = 0.4f;
     private float lastMineTime;
 
+    public bool shouldBeDestroyed;
+
 
     void Start()
     {
@@ -28,7 +30,7 @@ public class Resource : MonoBehaviour
         return System.Array.Exists(requiredTools, element => element == toolType);
     }
 
-    public void ChangeResourceSprite()
+    public void ChangeResourceSprite(bool destroy)
     {
         if (Time.time < lastMineTime + cooldownTime)
         {
@@ -36,16 +38,25 @@ public class Resource : MonoBehaviour
         }
         lastMineTime = Time.time;
 
-        currentSpriteIndex++;
-        if (currentSpriteIndex < sprites.Length)
+        if (destroy)
         {
+            currentSpriteIndex++;
+            if (currentSpriteIndex < sprites.Length)
+            {
+                StartCoroutine(ChangeSpriteWithDelay(cooldownTime));
+            }
+            else
+            {
+                StartCoroutine(DropItem(cooldownTime - 0.1f));
+                Destroy(gameObject, cooldownTime);
+            }
+        }else if (!destroy)
+        {
+            currentSpriteIndex++;
             StartCoroutine(ChangeSpriteWithDelay(cooldownTime));
-        }
-        else
-        {
             StartCoroutine(DropItem(cooldownTime - 0.1f));
-            Destroy(gameObject, cooldownTime);            
         }
+            
     }
     private IEnumerator ChangeSpriteWithDelay(float delay)
     {
@@ -68,5 +79,5 @@ public class Resource : MonoBehaviour
         Instantiate(itemPrefab, spawnLocation + spawnOffset, Quaternion.identity, collectablesParent);
     }
 }
-public enum ResourceType { Stone, Copper, Wood }
+public enum ResourceType { Stone, Copper, Wood, Blueberry }
 

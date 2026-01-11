@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.135, y: -0.033, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -103,10 +103,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184447d8b2518d24d9e7224497a5be72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 5
+  type: 4
   spritesForAnimation: []
   icon: {fileID: -1141649079087537557, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
-  maxAllowed: 100
+  maxAllowed: 99
 --- !u!58 &5118095898071595941
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -182,4 +182,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e19684f11fbc34b97f782556ed8f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UniqueID: 0
+  uniqueID: 0
+  parentName: 

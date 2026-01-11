@@ -9,6 +9,10 @@ public class Collectable : MonoBehaviour
     private Inventory_UI inventoryScript;
     public int maxAllowed = 100;
 
+    public int foodToRecover;
+    public int damage;
+
+    public bool isConsumable;
 
     private void Start()
     {
@@ -32,7 +36,9 @@ public class Collectable : MonoBehaviour
 
 public enum CollectableType
 {
-    NONE, WOODEN_PICKAXE, STONE_PICKAXE, COPPER_PICKAXE, STONE, COPPER
+    NONE, WOODEN_PICKAXE, STONE_PICKAXE, COPPER_PICKAXE,
+    STONE, COPPER,
+    BLUEBERRY
 }
 
 

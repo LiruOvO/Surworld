@@ -106,7 +106,7 @@ MonoBehaviour:
   - {fileID: 606592625336943909, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   - {fileID: 813674105352346777, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   - {fileID: 1519986222, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
-  itemToDropType: 6
+  itemPrefab: {fileID: 5666531810364502965, guid: cd372cff0c7775e48a59aee68b374acf, type: 3}
   requiredTools: 0200000003000000
 --- !u!61 &58912985390750561
 BoxCollider2D:

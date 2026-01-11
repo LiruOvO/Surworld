@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 1558627332697558233}
   quantityText: {fileID: 4826168454767664583}
-  selectionBorder: {fileID: 2197556388746222598}
+  slotCollectible: 0
 --- !u!61 &3748508009006561818
 BoxCollider2D:
   m_ObjectHideFlags: 0

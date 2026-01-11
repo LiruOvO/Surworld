@@ -9,32 +9,30 @@ public class Inventory
     [System.Serializable]
     public class Slot
     {
-        public CollectableType type;
+        public Collectable itemData;
         public int count;
 
         public Sprite icon;
         public Sprite[] spritesForAniimation;
         public Slot()
         {
-            type = CollectableType.NONE;
+            itemData = null;    
             count = 0;
         }
 
         public bool CanAddItem(CollectableType itemType, int itemMaxAllowed)
         {
-            if (type == CollectableType.NONE) return true;
-            if (type == itemType && count < itemMaxAllowed) return true;
+            if (itemData == null) return true;
+            if (itemData.type == itemType && count < itemMaxAllowed) return true;
 
             return false;
         }
 
         public void AddItem(Collectable item)
         {
-            if (type == CollectableType.NONE)
+            if (itemData == null)
             {
-                this.spritesForAniimation = item.spritesForAnimation;
-                this.type = item.type;
-                this.icon = item.icon;
+                this.itemData = item;
             }
             count++;
         }
@@ -46,9 +44,7 @@ public class Inventory
                 count--;
                 if (count == 0)
                 {
-                    icon = null;
-                    spritesForAniimation = null;
-                    type = CollectableType.NONE;
+                    itemData = null;
                 }
             }
         }
@@ -73,7 +69,7 @@ public class Inventory
     {
         foreach (Slot slot in slots)
         {
-            if (slot.type == item.type && slot.CanAddItem(item.type, item.maxAllowed))
+            if (slot.itemData != null && slot.itemData.type == item.type && slot.CanAddItem(item.type, item.maxAllowed))
             {
                 slot.AddItem(item);
                 return true;
@@ -82,7 +78,7 @@ public class Inventory
 
         foreach (Slot slot in slots)
         {
-            if (slot.type == CollectableType.NONE)
+            if (slot.itemData == null)
             {
                 if (item.maxAllowed > 0)
                 {
@@ -106,9 +102,7 @@ public class Inventory
         foreach (Slot slot in slots)
         {
             slot.count = 0;
-            slot.type = CollectableType.NONE;
-            slot.icon = null;
-            slot.spritesForAniimation = null;
+            slot.itemData = null;
         }
     }
 }

@@ -13,7 +13,7 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
     private Image uiImage;
     private Inventory_UI inventoryUI;
 
-    public Collectable slotItemData; //зберіягає який предмет в слоті
+    public CollectableType slotCollectible;//зберіягає який предмет в слоті
 
     void Awake()
     {
@@ -45,8 +45,8 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
     {
         if (slot != null)
         {
-            slotItemData = slot.itemData;
-            itemIcon.sprite = slot.itemData.icon;
+            slotCollectible = slot.type;
+            itemIcon.sprite =  slot.icon;
             itemIcon.color = new Color(1, 1, 1, 1);
             quantityText.text = slot.count.ToString();
         }
@@ -54,7 +54,7 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
 
     public void SetEmpty()
     {
-        slotItemData = null;
+        slotCollectible = CollectableType.NONE;
         itemIcon.sprite = null;
         itemIcon.color = new Color(1,1,1,0);
         quantityText.text = "";

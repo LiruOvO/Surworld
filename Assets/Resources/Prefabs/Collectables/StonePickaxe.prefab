@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6198004315002061577}
   - component: {fileID: 5273166786592007988}
-  - component: {fileID: 8688699869618902562}
   - component: {fileID: 5736610280730762073}
   - component: {fileID: 3761310136557635537}
+  - component: {fileID: 4101113237512013269}
   - component: {fileID: 4302353619559867591}
   m_Layer: 0
   m_Name: StonePickaxe
@@ -91,36 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8688699869618902562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912447180364580084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5623207e922455147bf877b4c696fc1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 3
-  spritesForAnimation:
-  - {fileID: -3582768867960430704, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -1217072336453439025, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 8775652517144319227, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -7346714851781164974, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -6925887734033872888, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8507999604694196634, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8984320829026630559, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 6191790684904217831, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4351611495106405588, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4663365283415034387, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5546818832371308766, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5395187459698883591, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  icon: {fileID: -4482896367203201399, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
-  maxAllowed: 1
-  isConsumable: 0
-  weaponDamage: 20
 --- !u!50 &5736610280730762073
 Rigidbody2D:
   serializedVersion: 5
@@ -194,6 +164,34 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
+--- !u!114 &4101113237512013269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912447180364580084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 184447d8b2518d24d9e7224497a5be72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  spritesForAnimation:
+  - {fileID: -3582768867960430704, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -1217072336453439025, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: 8775652517144319227, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -7346714851781164974, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -6925887734033872888, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -8507999604694196634, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -8984320829026630559, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: 6191790684904217831, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -4351611495106405588, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -4663365283415034387, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -5546818832371308766, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -5395187459698883591, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  icon: {fileID: -4482896367203201399, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  maxAllowed: 1
 --- !u!114 &4302353619559867591
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,5 +204,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e19684f11fbc34b97f782556ed8f2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uniqueID: 0
-  parentName: 
+  UniqueID: 0

@@ -6,7 +6,7 @@ public class Resource : MonoBehaviour
 {
     public ResourceType type;    
     public Sprite[] sprites;
-    public Collectable itemPrefab;
+    public CollectableType itemToDropType;
 
     public CollectableType[] requiredTools;
 
@@ -59,6 +59,7 @@ public class Resource : MonoBehaviour
     private IEnumerator DropItem(float delay)
     {
         yield return new WaitForSeconds(delay);
+        Collectable itemPrefab = ItemManager.Instance.GetItemByType(itemToDropType);
 
         Vector3 spawnLocation = transform.position;
         Vector3 spawnOffset = new Vector3(Random.Range(-0.3f, 0f), Random.Range(-1.3f, -1.5f), 0f);
@@ -67,6 +68,5 @@ public class Resource : MonoBehaviour
         Instantiate(itemPrefab, spawnLocation + spawnOffset, Quaternion.identity, collectablesParent);
     }
 }
-public enum ResourceType { Stone, Copper, Wood, 
-Blueberry}
+public enum ResourceType { Stone, Copper, Wood }
 

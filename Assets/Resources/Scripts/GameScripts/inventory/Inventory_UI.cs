@@ -37,26 +37,22 @@ public class Inventory_UI : MonoBehaviour
         {
             clickedSlot.SelectColor();
             selectedSlot = clickedSlot;
-            if (selectedSlot.slotItemData != null)
-            {
-                // ЗМІНЕНО: Беремо тип прямо з даних об'єкта
-                interactions.selectedItem = selectedSlot.slotItemData.type;
+            interactions.selectedItem = selectedSlot.slotCollectible; //передає який предмет в руці
 
-                // ЗМІНЕНО: Передаємо спрайти для анімації напряму з об'єкта
-                if (selectedSlot.slotItemData.spritesForAnimation != null && selectedSlot.slotItemData.spritesForAnimation.Length > 0)
+            //Передача спрайтів колектібл для аніматора
+            int slotIndex = -1;
+            if (slotsMini.Contains(selectedSlot)) slotIndex = slotsMini.IndexOf(selectedSlot);
+            if (slotIndex != -1 && slotIndex < player.inventory.slots.Count)
+            {
+                Inventory.Slot inventorySlot = player.inventory.slots[slotIndex];
+                if (inventorySlot.spritesForAniimation != null)
                 {
-                    playerPartsAnimation.SetCollectibleSprites(selectedSlot.slotItemData.spritesForAnimation);
+                    playerPartsAnimation.SetCollectibleSprites(inventorySlot.spritesForAniimation);
                 }
                 else
                 {
                     playerPartsAnimation.SetCollectibleSprites(null);
                 }
-            }
-            else
-            {
-                // Якщо слот порожній
-                interactions.selectedItem = CollectableType.NONE;
-                playerPartsAnimation.SetCollectibleSprites(null);
             }
         }
     }
@@ -69,7 +65,7 @@ public class Inventory_UI : MonoBehaviour
         {
            for (int i = 0; i < slots.Count; i++)
            {
-                if (player.inventory.slots[i].itemData != null)
+                if (player.inventory.slots[i].type != CollectableType.NONE)
                 {
                     slots[i].SetItem(player.inventory.slots[i]);
                     if (i < 7) 
@@ -89,7 +85,7 @@ public class Inventory_UI : MonoBehaviour
     //Викидання предмету з інвентаря
     public void Remove(int slotID)
     {
-        Collectable itemToDrop = ItemManager.Instance.GetItemByType(player.inventory.slots[slotID].itemData.type);
+        Collectable itemToDrop = ItemManager.Instance.GetItemByType(player.inventory.slots[slotID].type);
 
         if (itemToDrop != null)
         {
@@ -98,6 +94,5 @@ public class Inventory_UI : MonoBehaviour
             Refresh();
         }
     }
-
 
 }

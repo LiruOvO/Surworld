@@ -1,15 +1,13 @@
 using UnityEngine;
 
 //Скрипт що чіпляється до предметів які можна збирати в інвентар
-public abstract class Collectable : MonoBehaviour
+public class Collectable : MonoBehaviour
 {
     public CollectableType type;
     public Sprite[] spritesForAnimation;
     public Sprite icon;
     private Inventory_UI inventoryScript;
     public int maxAllowed = 100;
-
-    public bool isConsumable;
 
 
     private void Start()
@@ -30,16 +28,11 @@ public abstract class Collectable : MonoBehaviour
             }
         }        
     }
-    public abstract void Use(Player player);
 }
 
 public enum CollectableType
 {
-    NONE,
-    WOODEN_PICKAXE, STONE_PICKAXE, COPPER_PICKAXE, 
-    STONE, COPPER, BLUEBERRY
+    NONE, WOODEN_PICKAXE, STONE_PICKAXE, COPPER_PICKAXE, STONE, COPPER
 }
-
-
 
 

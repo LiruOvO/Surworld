@@ -1,6 +1,8 @@
+using System.Collections;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Unity.VisualScripting.Member;
 
 public class PlayMenu : MonoBehaviour
 {
@@ -40,6 +42,11 @@ public class PlayMenu : MonoBehaviour
     //Кнопка запуску гри або меню кастомізації
     public void Play(string sceneName)
     {
+        StartCoroutine(PlayAndLoad(sceneName));
+    }
+    IEnumerator PlayAndLoad(string sceneName) //затримка щоб звук встигнув прозвучати
+    {
+        yield return new WaitForSeconds(1.2f);
         SceneManager.LoadScene(sceneName);
     }
 

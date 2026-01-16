@@ -52,9 +52,15 @@ public class Resource : MonoBehaviour
             }
         }else if (!destroy)
         {
-            currentSpriteIndex++;
-            StartCoroutine(ChangeSpriteWithDelay(cooldownTime));
-            StartCoroutine(DropItem(cooldownTime - 0.1f));
+            if(currentSpriteIndex == 0)
+            {
+                currentSpriteIndex++;
+                StartCoroutine(ChangeSpriteWithDelay(cooldownTime));
+                StartCoroutine(DropItem(cooldownTime - 0.1f));
+            }else if (spriteRenderer.sprite == sprites[0])
+            {
+                currentSpriteIndex = 0;
+            }            
         }
             
     }
@@ -63,7 +69,7 @@ public class Resource : MonoBehaviour
         yield return new WaitForSeconds(delay);
         if (spriteRenderer != null)
         {
-            spriteRenderer.sprite = sprites[currentSpriteIndex];
+            spriteRenderer.sprite = sprites[currentSpriteIndex]; 
         }
     }
 

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Security.Cryptography;
 using UnityEngine;
 
+
+//Скрипт для перегенерації ресурсів на карті
 public class ResourcesGenerate : MonoBehaviour
 {
     public ResourceType resourceType;
@@ -16,30 +18,19 @@ public class ResourcesGenerate : MonoBehaviour
     {
         while (true)
         {
-            Resource isDestroyed = ItemManager.Instance.GetItemByType(resourceType);
-            if (isDestroyed.shouldBeDestroyed)
+            foreach (GameObject res in resSP)
             {
-                foreach (GameObject res in resSP)
+                if (res.transform.childCount == 0)
                 {
-                    if (res.transform.childCount == 0)
-                    {
-                        StartCoroutine(SpawnRes(res));
-                    }
+                    StartCoroutine(SpawnRes(res));
                 }
-            }
-            else
-            {
-                foreach (GameObject res in resSP)
+                else if (res.transform.childCount == 1 && res.transform.GetChild(0).GetComponent<Resource>().shouldBeDestroyed == false)
                 {
-                    if (res.transform.childCount == 0)
-                    {
-                        StartCoroutine(ChangeSprite(isDestroyed.sprites));
-                    }
+                    StartCoroutine(ChangeSprite(res));
                 }
-            }
-            
+            }            
 
-            yield return new WaitForSeconds(10);
+            yield return new WaitForSeconds(20);
         }
     }
     private IEnumerator SpawnRes(GameObject res)
@@ -51,12 +42,15 @@ public class ResourcesGenerate : MonoBehaviour
         Instantiate(itemPrefab, res.transform.position, Quaternion.identity, res.transform);
     }
 
-    private IEnumerator ChangeSprite(Sprite[] sprites)
+    private IEnumerator ChangeSprite(GameObject spawnPoint)
     {
-        float delay = Random.Range(1f, 5f);
+        float delay = Random.Range(5f, 10f);
         yield return new WaitForSeconds(delay);
+
+        Transform currentRes = spawnPoint.transform.GetChild(0);
+        SpriteRenderer sr = currentRes.GetComponent<SpriteRenderer>();
         Resource itemPrefab = ItemManager.Instance.GetItemByType(resourceType);
-        itemPrefab.GetComponent<SpriteRenderer>().sprite = sprites[0];
+        sr.sprite = itemPrefab.sprites[0];
     }
 
     }

@@ -33,6 +33,10 @@ public class HealthManager : MonoBehaviour
 
                 transform.position = new Vector2(-19.5f, 46f);
                 GetComponent<Player>().inventory.ClearInventory();
+
+                Collectable starterPickaxe = ItemManager.Instance.GetItemByType(CollectableType.WOODEN_PICKAXE);
+                GetComponent<Player>().inventory.Add(starterPickaxe);
+
                 FindFirstObjectByType<Inventory_UI>().Refresh();
 
             }

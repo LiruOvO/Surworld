@@ -5,7 +5,7 @@ using static Inventory;
 using UnityEngine.EventSystems;
 
 //Відображення слотів в інвенторі
-public class Slot_UI : MonoBehaviour, IPointerClickHandler
+public class Slot_UI : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
     public Image itemIcon;
     public TextMeshProUGUI quantityText;
@@ -15,17 +15,68 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler
 
     public CollectableType slotCollectible;//зберіягає який предмет в слоті
 
+    private CanvasGroup canvasGroup;
+    private Vector3 originalPosition;
     void Awake()
     {
         uiImage = GetComponent<Image>();
         inventoryUI = GetComponentInParent<Inventory_UI>();
+
+        // Додай CanvasGroup на префаб слота, щоб іконка була прозорою при перетягуванні
+        canvasGroup = itemIcon.GetComponent<CanvasGroup>();
+        if (canvasGroup == null) canvasGroup = itemIcon.gameObject.AddComponent<CanvasGroup>();
     }
-    //Виділення слота при натисканні на нього, та прибирання виділення при повторному натисканні
+
     public void OnPointerClick(PointerEventData eventData)
     {
-        if (inventoryUI != null)
+        if (inventoryUI != null) inventoryUI.HandleSlotSelection(this);
+    }
+
+    // --- ЛОГІКА ПЕРЕТЯГУВАННЯ ---
+
+    public void OnBeginDrag(PointerEventData eventData)
+    {
+        if (slotCollectible == CollectableType.NONE) return;
+
+        originalPosition = itemIcon.transform.position;
+        canvasGroup.alpha = 0.8f; // Робимо напівпрозорим
+        canvasGroup.blocksRaycasts = false; // Дозволяємо "бачити" слоти під іконкою
+
+        itemIcon.transform.SetParent(inventoryUI.transform);
+        itemIcon.transform.SetAsLastSibling();
+    }
+
+    public void OnDrag(PointerEventData eventData)
+    {
+        if (slotCollectible == CollectableType.NONE) return;
+
+        // Іконка слідує за мишкою
+        itemIcon.transform.position = Input.mousePosition;
+    }
+
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        canvasGroup.alpha = 1f;
+        canvasGroup.blocksRaycasts = true;
+
+        // 3. Повертаємо іконку назад у її рідний слот
+        itemIcon.transform.SetParent(this.transform);
+        itemIcon.transform.position = originalPosition;
+
+        // Встановлюємо порядок у самому слоті (щоб іконка була під текстом кількості, якщо треба)
+        itemIcon.transform.SetAsFirstSibling();
+
+        // Логіка обміну (та сама, що вже була)
+        GameObject dropObject = eventData.pointerCurrentRaycast.gameObject;
+        if (dropObject != null)
         {
-            inventoryUI.HandleSlotSelection(this);
+            Slot_UI targetSlot = dropObject.GetComponent<Slot_UI>();
+            if (targetSlot == null) targetSlot = dropObject.GetComponentInParent<Slot_UI>();
+
+            if (targetSlot != null && targetSlot != this)
+            {
+                inventoryUI.SwapSlots(this, targetSlot);
+            }
         }
     }
     public void ResetColor()

@@ -28,6 +28,10 @@ public class HungerManager : MonoBehaviour
         {
             Starving();
         }
+        if(currentHunger > 80)
+        {
+            GetComponent<HealthManager>().Heal(1);
+        }
     }
 
     //Зменшення хп коли високий голод
@@ -35,7 +39,7 @@ public class HungerManager : MonoBehaviour
     {
         if(currentHunger == 0)
         {
-            GetComponent<HealthManager>().currentHealth -= 1f;
+            GetComponent<HealthManager>().TakeDamage(1);
             healthManager.value = GetComponent<HealthManager>().currentHealth;            
         }        
     }

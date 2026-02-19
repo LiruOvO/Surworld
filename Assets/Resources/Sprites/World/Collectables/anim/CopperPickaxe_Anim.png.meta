@@ -1,31 +1,49 @@
 fileFormatVersion: 2
-guid: 2ffb311ea058efb4abd86810a5d0a369
+guid: e86fec08aa8b32747937ebcfbbe25191
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1301059002549382412
-    second: ForCity_0
+      213: -2939062283202617393
+    second: CopperPickaxe_Anim_0
   - first:
-      213: 2871146284301147049
-    second: ForCity_1
+      213: 4072539201801399858
+    second: CopperPickaxe_Anim_1
   - first:
-      213: -7331202493992290031
-    second: ForCity_2
+      213: -7513540635964461798
+    second: CopperPickaxe_Anim_2
   - first:
-      213: -1938153265009535090
-    second: ForCity_3
+      213: 1323298535994096821
+    second: CopperPickaxe_Anim_3
   - first:
-      213: -4836656340543264628
-    second: ForCity_4
+      213: 7255124394920794134
+    second: CopperPickaxe_Anim_4
   - first:
-      213: -7249751197584040965
-    second: ForCity_5
+      213: -5502270186701321121
+    second: CopperPickaxe_Anim_5
   - first:
-      213: -8571237220568631748
-    second: ForCity_6
+      213: 3055579482782739681
+    second: CopperPickaxe_Anim_6
   - first:
-      213: 8428289739739718622
-    second: ForCity_7
+      213: -5481343701112477174
+    second: CopperPickaxe_Anim_7
+  - first:
+      213: 7914549281506349852
+    second: CopperPickaxe_Anim_8
+  - first:
+      213: -5617871888350612105
+    second: CopperPickaxe_Anim_9
+  - first:
+      213: 1223114013000686683
+    second: CopperPickaxe_Anim_10
+  - first:
+      213: -8631543574658115710
+    second: CopperPickaxe_Anim_11
+  - first:
+      213: 5252635330010121133
+    second: CopperPickaxe_Anim_12
+  - first:
+      213: -8252424742529224033
+    second: CopperPickaxe_Anim_13
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -147,13 +165,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ForCity_0
+      name: CopperPickaxe_Anim_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 112
-        width: 16
-        height: 16
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,283 +180,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0da7cef44a4e0210800000000000000
-      internalID: 1301059002549382412
+      spriteID: fcf95fcdc6a5637d0800000000000000
+      internalID: -2939062283202617393
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForCity_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9abd3f5655c58d720800000000000000
-      internalID: 2871146284301147049
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 119b1219c26524a90800000000000000
-      internalID: -7331202493992290031
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_3
+      name: CopperPickaxe_Anim_1
       rect:
         serializedVersion: 2
         x: 48
-        y: 96
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e87d7decfdb4a15e0800000000000000
-      internalID: -1938153265009535090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 96
-        width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c8827491faeb0ecb0800000000000000
-      internalID: -4836656340543264628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 112
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bfb5a0652b5b36b90800000000000000
-      internalID: -7249751197584040965
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c3676660929dc0980800000000000000
-      internalID: -8571237220568631748
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_7
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ed361410ddc47f470800000000000000
-      internalID: 8428289739739718622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_8
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 801c6c2fee84f36489c855467a521db5
-      internalID: -992640775
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_11
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6608973123fabee4597d7c0ea2fe9f7c
-      internalID: -1869506033
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_12
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e88759396102a941952a7ac6e9a5665
-      internalID: 1347014244
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_13
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39d5389bba7f048439a26459c7dccaa2
-      internalID: 721359
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_14
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 36ac6d92353cc1e418fdbaccbeab088d
-      internalID: 1511589098
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ForCity_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 32
-        width: 16
+        y: 48
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -446,21 +200,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4ccf659c528a3f7428a7ef0dcd58a58f
-      internalID: -982743473
+      spriteID: 23ea939a3d0948830800000000000000
+      internalID: 4072539201801399858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForCity_16
+      name: CopperPickaxe_Anim_3
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
+        x: 144
+        y: 48
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -468,21 +222,21 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2f44c83d747e0db4d94c75d5f967ed36
-      internalID: 32607675
+      spriteID: a1d20eb999a8ab790800000000000000
+      internalID: -7513540635964461798
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForCity_17
+      name: CopperPickaxe_Anim_4
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
+        x: 192
+        y: 48
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -490,21 +244,175 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 06770f51ef0d3b045808540576915d59
-      internalID: 929405120
+      spriteID: 5bcf8b1e10d4d5210800000000000000
+      internalID: 1323298535994096821
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ForCity_18
+      name: CopperPickaxe_Anim_5
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6185688a2316fa460800000000000000
+      internalID: 7255124394920794134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CopperPickaxe_Anim_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c027fda6204a3b0800000000000000
+      internalID: -5502270186701321121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CopperPickaxe_Anim_7
       rect:
         serializedVersion: 2
         x: 48
-        y: 32
-        width: 16
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ecac36b959976a20800000000000000
+      internalID: 3055579482782739681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CopperPickaxe_Anim_8
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0aad5bf1fa5ee3b0800000000000000
+      internalID: -5481343701112477174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CopperPickaxe_Anim_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13528173a026dd60800000000000000
+      internalID: 7914549281506349852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CopperPickaxe_Anim_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7757535484f4902b0800000000000000
+      internalID: -5617871888350612105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CopperPickaxe_Anim_11
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5c55b8e6bf59f010800000000000000
+      internalID: 1223114013000686683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CopperPickaxe_Anim_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48
+        width: 48
         height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -514,8 +422,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 81c1240b9293f0245aedbbc0762d71eb
-      internalID: 785194751
+      spriteID: 3c97d14cde518234ba8b2752419df911
+      internalID: 910846721
       vertices: []
       indices: 
       edges: []
@@ -524,7 +432,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: e6fbe6c2a7171fb449cbc0caa26ed54a
+    spriteID: f1b0b3bae89fe0045bda42e1650c2dca
     internalID: 0
     vertices: []
     indices: 
@@ -534,33 +442,19 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ForCity_0: 1301059002549382412
-      ForCity_1: 2871146284301147049
-      ForCity_10: -682833136
-      ForCity_11: -1869506033
-      ForCity_12: 1347014244
-      ForCity_13: 721359
-      ForCity_14: 1511589098
-      ForCity_15: -982743473
-      ForCity_16: 32607675
-      ForCity_17: 929405120
-      ForCity_18: 785194751
-      ForCity_19: -1476365097
-      ForCity_2: -7331202493992290031
-      ForCity_20: -2085734422
-      ForCity_21: -1231855178
-      ForCity_22: -170592240
-      ForCity_23: -1091446092
-      ForCity_24: -1353484950
-      ForCity_25: -1358224892
-      ForCity_26: -955450915
-      ForCity_3: -1938153265009535090
-      ForCity_4: -4836656340543264628
-      ForCity_5: -7249751197584040965
-      ForCity_6: -8571237220568631748
-      ForCity_7: 8428289739739718622
-      ForCity_8: -992640775
-      ForCity_9: 1805575076
+      5: -5502270186701321121
+      CopperPickaxe_Anim_0: -2939062283202617393
+      CopperPickaxe_Anim_1: 4072539201801399858
+      CopperPickaxe_Anim_10: -5617871888350612105
+      CopperPickaxe_Anim_11: 1223114013000686683
+      CopperPickaxe_Anim_2: 910846721
+      CopperPickaxe_Anim_3: -7513540635964461798
+      CopperPickaxe_Anim_4: 1323298535994096821
+      CopperPickaxe_Anim_5: 7255124394920794134
+      CopperPickaxe_Anim_6: -5502270186701321121
+      CopperPickaxe_Anim_7: 3055579482782739681
+      CopperPickaxe_Anim_8: -5481343701112477174
+      CopperPickaxe_Anim_9: 7914549281506349852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

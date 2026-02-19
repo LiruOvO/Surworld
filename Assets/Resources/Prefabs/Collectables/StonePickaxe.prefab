@@ -105,22 +105,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   spritesForAnimation:
-  - {fileID: -3582768867960430704, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -1217072336453439025, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 8775652517144319227, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -7346714851781164974, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -6925887734033872888, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8507999604694196634, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8984320829026630559, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 6191790684904217831, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4351611495106405588, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4663365283415034387, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5546818832371308766, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5395187459698883591, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
+  - {fileID: -2939062283202617393, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 4072539201801399858, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 910846721, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: -7513540635964461798, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 1323298535994096821, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 7255124394920794134, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: -5502270186701321121, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 3055579482782739681, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: -5481343701112477174, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 7914549281506349852, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: -5617871888350612105, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 1223114013000686683, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
   icon: {fileID: -4482896367203201399, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 1
   foodToRecover: 0
   damage: 20
+  price: 20
   isConsumable: 0
 --- !u!50 &5736610280730762073
 Rigidbody2D:

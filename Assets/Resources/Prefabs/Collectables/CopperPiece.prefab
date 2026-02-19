@@ -107,6 +107,10 @@ MonoBehaviour:
   spritesForAnimation: []
   icon: {fileID: -1054624876298059505, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 99
+  foodToRecover: 0
+  damage: 1
+  price: 10
+  isConsumable: 0
 --- !u!58 &5118095898071595941
 CircleCollider2D:
   m_ObjectHideFlags: 0

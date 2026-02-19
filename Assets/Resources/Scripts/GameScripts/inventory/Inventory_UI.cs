@@ -111,4 +111,37 @@ public class Inventory_UI : MonoBehaviour
         }
     }
 
+    public void SwapSlots(Slot_UI sourceUI, Slot_UI targetUI)
+    {
+        // ЎукаЇмо ≥ндекс початкового слота в обох списках
+        int sourceIndex = slots.IndexOf(sourceUI);
+        if (sourceIndex == -1) sourceIndex = slotsMini.IndexOf(sourceUI);
+
+        // ЎукаЇмо ≥ндекс ц≥льового слота в обох списках
+        int targetIndex = slots.IndexOf(targetUI);
+        if (targetIndex == -1) targetIndex = slotsMini.IndexOf(targetUI);
+
+        // якщо обидва ≥ндекси знайден≥ (не дор≥внюють -1)
+        if (sourceIndex != -1 && targetIndex != -1)
+        {
+            // ћ≥н€Їмо дан≥ в лог≥чному ≥нвентар≥ гравц€
+            Inventory.Slot temp = player.inventory.slots[sourceIndex];
+            player.inventory.slots[sourceIndex] = player.inventory.slots[targetIndex];
+            player.inventory.slots[targetIndex] = temp;
+
+            // ќновлюЇмо весь ≥нтерфейс
+            Refresh();
+
+            // ќновлюЇмо спрайт у руках гравц€, €кщо пом≥н€ли активний слот
+            if (sourceUI.itemIcon.color.a > 0.9f || targetUI.itemIcon.color.a > 0.9f)
+            {
+                // якщо один з≥ слот≥в був вид≥лений кольором (чорним), 
+                // викликаЇмо вид≥ленн€ знову, щоб оновити предмет у руках
+                if (sourceUI == selectedSlot) HandleSlotSelection(sourceUI);
+                else if (targetUI == selectedSlot) HandleSlotSelection(targetUI);
+            }
+        }
+    }
+
+
 }

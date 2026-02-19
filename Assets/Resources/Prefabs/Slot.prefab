@@ -94,7 +94,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemIcon: {fileID: 1558627332697558233}
   quantityText: {fileID: 4826168454767664583}
-  selectionBorder: {fileID: 2197556388746222598}
+  slotCollectible: 0
 --- !u!61 &3748508009006561818
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -557,6 +557,7 @@ GameObject:
   - component: {fileID: 4136095262618079344}
   - component: {fileID: 9202959505206892478}
   - component: {fileID: 1558627332697558233}
+  - component: {fileID: 1115981792083209654}
   m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
@@ -605,7 +606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 0}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -621,3 +622,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &1115981792083209654
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7729346835572342140}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

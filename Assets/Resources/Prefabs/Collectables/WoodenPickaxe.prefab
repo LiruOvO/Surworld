@@ -121,6 +121,7 @@ MonoBehaviour:
   maxAllowed: 1
   foodToRecover: 0
   damage: 10
+  price: 1
   isConsumable: 0
 --- !u!50 &5736610280730762073
 Rigidbody2D:

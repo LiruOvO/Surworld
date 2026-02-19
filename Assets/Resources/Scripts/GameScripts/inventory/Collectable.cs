@@ -11,6 +11,7 @@ public class Collectable : MonoBehaviour
 
     public int foodToRecover;
     public int damage;
+    public int price;
 
     public bool isConsumable;
 

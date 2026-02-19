@@ -1,26 +1,51 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
-
+using System.Collections;
 //Скрипт для шкали здоров'я
 public class HealthManager : MonoBehaviour
 {
     public Slider healthSlider;
     public float currentHealth;
 
+
+    private SpriteRenderer[] renderers;
+    private Color[] originalColors;
     private void Start()
     {
+        renderers = GetComponentsInChildren<SpriteRenderer>();
+
+        // запам'ятовуємо їхні кольори
+        originalColors = new Color[renderers.Length];
+
+        for (int i = 0; i < renderers.Length; i++)
+        {
+            originalColors[i] = renderers[i].color;
+        }
+
         healthSlider.value = currentHealth;
     }
-    private void Update()
+
+    public void Heal(int health)
     {
-        Die();
+        currentHealth += health;
+        healthSlider.value = currentHealth;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        healthSlider.value = currentHealth;
+        StartCoroutine(DamageFlash());
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
 
     private void Die()
     {
-        if (currentHealth <= 0)
-        {
             if (this.CompareTag("Player"))
             {
                 currentHealth = 100f; 
@@ -45,6 +70,19 @@ public class HealthManager : MonoBehaviour
 
                 Destroy(this, 2);
             }
-        }
+    }  
+
+
+    IEnumerator DamageFlash()
+    {
+        // всі частини стають червоними
+        foreach (var r in renderers)
+            r.color = Color.red;
+
+        yield return new WaitForSeconds(0.2f);
+
+        // повертаємо оригінальні кольори
+        for (int i = 0; i < renderers.Length; i++)
+            renderers[i].color = originalColors[i];
     }
 }

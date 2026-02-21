@@ -120,8 +120,10 @@ MonoBehaviour:
   icon: {fileID: 3404651025987517522, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 1
   foodToRecover: 0
-  damage: 10
-  price: 1
+  damage: 2
+  priceToSell: 2
+  priceToBuy: 10
+  description: Wooden Pickaxe
   isConsumable: 0
 --- !u!50 &5736610280730762073
 Rigidbody2D:
@@ -194,7 +196,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6, y: 0.6}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
 --- !u!114 &-4280613108349191253
 MonoBehaviour:

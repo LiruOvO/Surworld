@@ -106,7 +106,7 @@ MonoBehaviour:
   sprites:
   - {fileID: -300537459, guid: 9e3c6d46358fd624f9a581e7f924e06e, type: 3}
   - {fileID: 1352955200029874055, guid: 9e3c6d46358fd624f9a581e7f924e06e, type: 3}
-  itemToDropType: 6
+  itemToDropType: 9
   requiredTools: 
   shouldBeDestroyed: 0
 --- !u!61 &58912985390750561

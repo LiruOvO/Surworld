@@ -22,4 +22,5 @@ public class SaveData
 
     public float health;
     public float hunger;
+    public int coins;
 }

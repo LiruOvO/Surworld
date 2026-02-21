@@ -37,7 +37,8 @@ public class PlayerInteractions : MonoBehaviour
             if (resource != null)
             {
                 Vector2 playerCheckPosition = (Vector2)transform.position + interactionOffset;
-                float distance = Vector2.Distance(playerCheckPosition, hitCollider.transform.position); //Розріхунок дистанції між гравцем і ресурсом
+                Vector2 closestPoint = hitCollider.ClosestPoint(playerCheckPosition);
+                float distance = Vector2.Distance(playerCheckPosition, closestPoint); //Розріхунок дистанції між гравцем і ресурсом
 
                 if (distance <= maxDistance)
                 {

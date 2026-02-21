@@ -42,6 +42,7 @@ public class SaveController : MonoBehaviour
         //здоров'я та їжа
         saveData.health = playerObject.GetComponent<HealthManager>().currentHealth;
         saveData.hunger = playerObject.GetComponent<HungerManager>().currentHunger;
+        saveData.coins = playerObject.GetComponent<Player>().GetCoins();
 
         //зовнішність
         saveData.hairSprites = SpritesToNames(DataManager.Instance.selectedHair, "Hair");
@@ -83,6 +84,10 @@ public class SaveController : MonoBehaviour
             hnm.currentHunger = saveData.hunger;
             hm.healthSlider.value = saveData.health;
             hnm.hungerSlider.value = saveData.hunger;
+            //монети
+            Player pl = playerObject.GetComponent<Player>();
+            pl.AddMoney(saveData.coins);
+            pl.coinsAmmount.text = saveData.coins.ToString();
 
 
             //зовнішність

@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.135, y: -0.033, z: 0}
-  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1054624876298059505, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  m_Sprite: {fileID: 5941773899504188461, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,11 +105,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   spritesForAnimation: []
-  icon: {fileID: -1054624876298059505, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  icon: {fileID: 5941773899504188461, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 99
   foodToRecover: 0
   damage: 1
-  price: 10
+  priceToSell: 2
+  priceToBuy: 10
+  description: Copper Ore
   isConsumable: 0
 --- !u!58 &5118095898071595941
 CircleCollider2D:

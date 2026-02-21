@@ -38,6 +38,8 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, I
     {
         if (slotCollectible == CollectableType.NONE) return;
 
+        eventData.pointerDrag = gameObject;
+
         originalPosition = itemIcon.transform.position;
         canvasGroup.alpha = 0.8f; // Робимо напівпрозорим
         canvasGroup.blocksRaycasts = false; // Дозволяємо "бачити" слоти під іконкою

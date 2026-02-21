@@ -11,7 +11,9 @@ public class Collectable : MonoBehaviour
 
     public int foodToRecover;
     public int damage;
-    public int price;
+    public int priceToSell;
+    public int priceToBuy;
+    public string description;
 
     public bool isConsumable;
 
@@ -38,8 +40,8 @@ public class Collectable : MonoBehaviour
 public enum CollectableType
 {
     NONE, WOODEN_PICKAXE, STONE_PICKAXE, COPPER_PICKAXE,
-    STONE, COPPER,
-    BLUEBERRY
+    STONE, COPPER, STICK, WOOD, LEAF, BLUEBERRY,
+    IRON_PICKAXE, WOODEN_AXE, STONE_AXE, COPPER_AXE, IRON_AXE
 }
 
 

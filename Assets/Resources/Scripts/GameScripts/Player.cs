@@ -1,9 +1,13 @@
+using TMPro;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
     public Inventory inventory;
     private Transform collectablesParent;
+    [SerializeField] private int coins;
+    public TextMeshProUGUI coinsAmmount;
+
 
     private void Awake()
     {
@@ -26,6 +30,16 @@ public class Player : MonoBehaviour
         Instantiate(item, spawnLocation + spawnOffset, Quaternion.identity, collectablesParent);
     }
 
-    
-    
+    public void AddMoney(int ammount)
+    {
+        coins += ammount;
+        coinsAmmount.text = coins.ToString();
+    }
+    public int GetCoins()
+    {
+        return coins;
+    }
+
+
+
 }

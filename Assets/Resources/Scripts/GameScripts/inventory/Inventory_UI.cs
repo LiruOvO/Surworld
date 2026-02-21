@@ -144,4 +144,31 @@ public class Inventory_UI : MonoBehaviour
     }
 
 
+    public void SellItem(Slot_UI sourceUI)
+    {
+        // Шукаємо індекс у списках
+        int slotIndex = slots.IndexOf(sourceUI);
+        if (slotIndex == -1) slotIndex = slotsMini.IndexOf(sourceUI);
+
+        if (slotIndex != -1)
+        {
+            Inventory.Slot inventorySlot = player.inventory.slots[slotIndex];
+
+            // Отримуємо ціну з ItemManager
+            Collectable itemData = ItemManager.Instance.GetItemByType(inventorySlot.type);
+
+            if (itemData != null)
+            {
+                // 1. Додаємо гроші (припустимо, у гравця є метод AddMoney)
+                player.AddMoney(itemData.priceToSell);
+                // 2. Видаляємо предмет (одну штуку)
+                player.inventory.Remove(slotIndex);
+
+                // 3. Оновлюємо інтерфейс
+                Refresh();
+
+            }
+        }
+    }
+
 }

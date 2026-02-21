@@ -85,5 +85,5 @@ public class Resource : MonoBehaviour
         Instantiate(itemPrefab, spawnLocation + spawnOffset, Quaternion.identity, collectablesParent);
     }
 }
-public enum ResourceType { Stone, Copper, Wood, Blueberry }
+public enum ResourceType { Stone, Copper, Wood, Blueberry, Bush, Tree }
 

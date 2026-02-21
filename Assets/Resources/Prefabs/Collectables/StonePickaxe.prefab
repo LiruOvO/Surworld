@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4101113237512013269}
   - component: {fileID: 5736610280730762073}
   - component: {fileID: 3761310136557635537}
-  - component: {fileID: 4302353619559867591}
+  - component: {fileID: -4280613108349191253}
   m_Layer: 0
   m_Name: StonePickaxe
   m_TagString: Untagged
@@ -103,25 +103,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 184447d8b2518d24d9e7224497a5be72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  type: 2
   spritesForAnimation:
-  - {fileID: -2939062283202617393, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: 4072539201801399858, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: 910846721, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: -7513540635964461798, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: 1323298535994096821, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: 7255124394920794134, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: -5502270186701321121, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: 3055579482782739681, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: -5481343701112477174, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: 7914549281506349852, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: -5617871888350612105, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
-  - {fileID: 1223114013000686683, guid: e86fec08aa8b32747937ebcfbbe25191, type: 3}
+  - {fileID: 5069251789900628778, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: -4624923851132051169, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: 2512568314644469312, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: -4625513439180758755, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: 2717945031804977142, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: -2041701226668149975, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: 2681397844625316438, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: 5889364896021496802, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: 8911301270748438194, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: 1020357406306093901, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: 5284504355073958569, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
+  - {fileID: -1616482051708677599, guid: 8c9aaa5a1dc377e42b9eade469bc827b, type: 3}
   icon: {fileID: -4482896367203201399, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 1
   foodToRecover: 0
-  damage: 20
-  price: 20
+  damage: 4
+  priceToSell: 5
+  priceToBuy: 25
+  description: Stone Pickaxe
   isConsumable: 0
 --- !u!50 &5736610280730762073
 Rigidbody2D:
@@ -194,9 +196,9 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.6, y: 0.6}
+  m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &4302353619559867591
+--- !u!114 &-4280613108349191253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

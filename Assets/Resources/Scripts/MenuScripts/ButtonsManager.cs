@@ -92,16 +92,6 @@ public class ButtonsManager : MonoBehaviour
         mainUI.SetActive(true);
     }
 
-    public void SoundsOff()
-    {
-
-    }
-
-    public void SoundsOn()
-    {
-
-    }
-
     //Кнопка виходу з гри
     public void ExitGame()
     {

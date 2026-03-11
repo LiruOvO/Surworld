@@ -42,7 +42,10 @@ public class PlayMenu : MonoBehaviour
     //Кнопка запуску гри або меню кастомізації
     public void Play(string sceneName)
     {
-        StartCoroutine(PlayAndLoad(sceneName));
+        if(string.IsNullOrEmpty(sceneName))
+        {
+            StartCoroutine(PlayAndLoad("PlayerCustomization"));
+        }else StartCoroutine(PlayAndLoad(sceneName));
     }
     IEnumerator PlayAndLoad(string sceneName) //затримка щоб звук встигнув прозвучати
     {
@@ -59,5 +62,19 @@ public class PlayMenu : MonoBehaviour
         EditorApplication.ExitPlaymode();
 #endif
     }
-   
+
+    /*public void SoundsOff()
+    {
+        AudioListener.pause = true;
+        soundsOff.SetActive(true);
+        soundsOn.SetActive(false);
+    }
+
+    public void SoundsOn()
+    {
+        AudioListener.pause = false;
+        soundsOff.SetActive(false);
+        soundsOn.SetActive(true);
+    }*/
+
 }

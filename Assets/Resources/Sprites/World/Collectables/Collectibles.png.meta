@@ -23,6 +23,30 @@ TextureImporter:
   - first:
       213: -1199817805618935749
     second: Collectibles_6
+  - first:
+      213: -877461318695221028
+    second: Collectibles_7
+  - first:
+      213: -8941473026959914590
+    second: Collectibles_8
+  - first:
+      213: -7233366584844903599
+    second: Collectibles_9
+  - first:
+      213: 3032324704949369101
+    second: Collectibles_10
+  - first:
+      213: -6497758556750862045
+    second: Collectibles_11
+  - first:
+      213: -2906450649757156128
+    second: Collectibles_12
+  - first:
+      213: 957867192696962611
+    second: Collectibles_13
+  - first:
+      213: 6733362142160969027
+    second: Collectibles_14
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,7 +176,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -174,7 +198,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -196,7 +220,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -218,7 +242,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -236,11 +260,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -258,11 +282,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -280,11 +304,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -302,19 +326,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cc3497f4f7bc2324796b42d3112fd85f
-      internalID: -53077887
+      spriteID: cd886036491a2d3f0800000000000000
+      internalID: -877461318695221028
       vertices: []
       indices: 
       edges: []
@@ -324,19 +348,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e2e2a2718e79d1f4da9e88318582fd5b
-      internalID: 544208471
+      spriteID: 2a9415be7a189e380800000000000000
+      internalID: -8941473026959914590
       vertices: []
       indices: 
       edges: []
@@ -346,19 +370,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 16
-        y: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5742258617d13364391a693a0e9b2d5f
-      internalID: -756220649
+      spriteID: 15b93244a6bed9b90800000000000000
+      internalID: -7233366584844903599
       vertices: []
       indices: 
       edges: []
@@ -368,19 +392,19 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4d239c2fb5bda7a40b818949a5856320
-      internalID: -853650147
+      spriteID: d09f522d04bf41a20800000000000000
+      internalID: 3032324704949369101
       vertices: []
       indices: 
       edges: []
@@ -389,20 +413,20 @@ TextureImporter:
       name: Collectibles_11
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 48
+        y: 16
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8ee100d7f29b4554ab4f863cdd41e710
-      internalID: -1999988016
+      spriteID: 3292c9ce40353d5a0800000000000000
+      internalID: -6497758556750862045
       vertices: []
       indices: 
       edges: []
@@ -411,20 +435,20 @@ TextureImporter:
       name: Collectibles_12
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: bb702734cca952644b2553663fd4badf
-      internalID: 1831047732
+      spriteID: 0ec750878863aa7d0800000000000000
+      internalID: -2906450649757156128
       vertices: []
       indices: 
       edges: []
@@ -433,20 +457,20 @@ TextureImporter:
       name: Collectibles_13
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 20e99832af42f024c82cba3e923bf9fb
-      internalID: -908941099
+      spriteID: 33ef3b203270b4d00800000000000000
+      internalID: 957867192696962611
       vertices: []
       indices: 
       edges: []
@@ -455,20 +479,20 @@ TextureImporter:
       name: Collectibles_14
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e0bf95c7b16511d488cee171822761eb
-      internalID: -1442504859
+      spriteID: 34d51938135b17d50800000000000000
+      internalID: 6733362142160969027
       vertices: []
       indices: 
       edges: []
@@ -477,7 +501,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 13715d751f7841d41873edc26655f973
+    spriteID: 9a3582782c495344ea8c29e8977da211
     internalID: 0
     vertices: []
     indices: 
@@ -489,19 +513,19 @@ TextureImporter:
     nameFileIdTable:
       Collectibles_0: 3404651025987517522
       Collectibles_1: -4482896367203201399
-      Collectibles_10: -853650147
-      Collectibles_11: -1999988016
-      Collectibles_12: 1831047732
-      Collectibles_13: -908941099
-      Collectibles_14: -1442504859
+      Collectibles_10: 3032324704949369101
+      Collectibles_11: -6497758556750862045
+      Collectibles_12: -2906450649757156128
+      Collectibles_13: 957867192696962611
+      Collectibles_14: 6733362142160969027
       Collectibles_2: -7691055925504261015
       Collectibles_3: -1141649079087537557
       Collectibles_4: -1054624876298059505
       Collectibles_5: 5941773899504188461
       Collectibles_6: -1199817805618935749
-      Collectibles_7: -53077887
-      Collectibles_8: 544208471
-      Collectibles_9: -756220649
+      Collectibles_7: -877461318695221028
+      Collectibles_8: -8941473026959914590
+      Collectibles_9: -7233366584844903599
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

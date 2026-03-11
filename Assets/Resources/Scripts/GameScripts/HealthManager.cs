@@ -11,6 +11,12 @@ public class HealthManager : MonoBehaviour
 
     private SpriteRenderer[] renderers;
     private Color[] originalColors;
+
+
+    [Header("Audio")]
+    public AudioSource audioSource; // Посилання на програвач
+    public AudioClip damageSound;
+
     private void Start()
     {
         renderers = GetComponentsInChildren<SpriteRenderer>();
@@ -36,6 +42,7 @@ public class HealthManager : MonoBehaviour
     {
         currentHealth -= damage;
         healthSlider.value = currentHealth;
+        audioSource.PlayOneShot(damageSound);
         StartCoroutine(DamageFlash());
 
         if (currentHealth <= 0)

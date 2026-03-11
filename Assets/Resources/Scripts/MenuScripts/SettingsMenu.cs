@@ -18,10 +18,26 @@ public class SettingsMenu : MonoBehaviour
     List<Resolution> selRes = new List<Resolution>();
     bool isFullScreen = true;
 
+
+    [Header("Volume Settings")]
+    public Scrollbar volumeScrollbar;
+
     private void Start()
     {
-        GetResolution();        
+        GetResolution();
+
+        float savedVolume = PlayerPrefs.GetFloat("MusicVolume", 1f);
+        volumeScrollbar.value = savedVolume;
+        AudioListener.volume = savedVolume;
+        volumeScrollbar.onValueChanged.AddListener(ChangeVolume);
     }
+
+    public void ChangeVolume(float volume)
+    {
+        AudioListener.volume = volume;
+        PlayerPrefs.SetFloat("MusicVolume", volume);
+    }
+
     public void GetResolution()
     {
         allResolutions = Screen.resolutions;
@@ -78,4 +94,6 @@ public class SettingsMenu : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.Save();
     }
+  
+
 }

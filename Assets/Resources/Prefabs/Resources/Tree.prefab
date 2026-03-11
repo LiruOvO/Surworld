@@ -109,7 +109,7 @@ MonoBehaviour:
   - {fileID: -671308175, guid: b8ceacd0c8a6c2e47b9f3fdcb950d487, type: 3}
   - {fileID: -356060108, guid: b8ceacd0c8a6c2e47b9f3fdcb950d487, type: 3}
   itemToDropType: 7
-  requiredTools: 01000000
+  requiredTools: 0b0000000c0000000d0000000e000000
   shouldBeDestroyed: 1
 --- !u!61 &7554510053046992507
 BoxCollider2D:

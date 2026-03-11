@@ -14,6 +14,8 @@ public class PlayerInteractions : MonoBehaviour
     private Animator animator;
     public CollectableType selectedItem = CollectableType.NONE;
 
+    public AudioSource actionSource;
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -42,6 +44,9 @@ public class PlayerInteractions : MonoBehaviour
 
                 if (distance <= maxDistance)
                 {
+                    AudioSource resourceAudio = resource.GetComponent<AudioSource>();
+                    resourceAudio.Play();
+
                     if (resource.CanInteractWith(selectedItem) && resource.shouldBeDestroyed)
                     {
                         animator.SetBool("isInteracting", true);

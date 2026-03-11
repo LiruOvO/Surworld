@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1999988016, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  m_Sprite: {fileID: -1054624876298059505, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,19 +105,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 11
   spritesForAnimation:
-  - {fileID: -3582768867960430704, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -1217072336453439025, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 8775652517144319227, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -7346714851781164974, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -6925887734033872888, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8507999604694196634, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8984320829026630559, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 6191790684904217831, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4351611495106405588, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4663365283415034387, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5546818832371308766, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5395187459698883591, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  icon: {fileID: -1999988016, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  - {fileID: -6372983328598163295, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: -2617474657977412518, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: 4582652251422637231, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: -9083491806541714777, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: 8369181424570749995, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: -5477532217129206211, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: 2643683187132390835, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: -6672172125462015191, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: 555069599863329073, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: -263059514471820726, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: 3974577204663028660, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  - {fileID: -8038933835192506975, guid: f24a9e425156b9d4b815b61f1447364a, type: 3}
+  icon: {fileID: -1054624876298059505, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 1
   foodToRecover: 0
   damage: 2

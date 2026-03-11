@@ -80,4 +80,6 @@ public class PlayerPartsAnimation : MonoBehaviour
             collectableRenderer.sprite = null;
         }
     }
+
+
 }

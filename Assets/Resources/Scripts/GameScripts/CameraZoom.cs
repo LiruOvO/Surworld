@@ -6,7 +6,7 @@ using System.Collections.Generic;
 public class CameraZoom : MonoBehaviour
 {
     private CinemachineCamera vCam;
-    public GameObject shopPanel; // ѕерет€гни сюди панель магазину в ≥нспектор≥
+    public List<GameObject> uiPanels = new List<GameObject>(); // —писок ю≥ де зум блокувати
 
     [Header("Zoom Settings")]
     public float minSize = 3f;
@@ -22,8 +22,8 @@ public class CameraZoom : MonoBehaviour
 
     void Update()
     {
-        // якщо магазин в≥дкритий ≤ миша знаходитьс€ над ним Ч зум не працюЇ
-        if (shopPanel != null && shopPanel.activeInHierarchy && IsMouseOverShop())
+        // якщо магазин ю≥ ≤ миша знаходитьс€ над ним Ч зум не працюЇ
+        if (IsMouseOverAnyPanel())
         {
             return;
         }
@@ -38,9 +38,12 @@ public class CameraZoom : MonoBehaviour
         vCam.Lens.OrthographicSize = Mathf.Lerp(vCam.Lens.OrthographicSize, targetSize, Time.deltaTime * 10f);
     }
 
-    // ƒопом≥жна функц≥€, €ка перев≥р€Ї, чи миша саме над магазином
-    private bool IsMouseOverShop()
+    // ƒопом≥жна функц≥€, €ка перев≥р€Ї, чи миша саме над ю≥
+    private bool IsMouseOverAnyPanel()
     {
+        // якщо кл≥кнули або крутимо над UI
+        if (EventSystem.current == null) return false;
+
         PointerEventData eventData = new PointerEventData(EventSystem.current);
         eventData.position = Input.mousePosition;
         List<RaycastResult> results = new List<RaycastResult>();
@@ -48,10 +51,16 @@ public class CameraZoom : MonoBehaviour
 
         foreach (var result in results)
         {
-            // ѕерев≥р€Їмо, чи Ї серед об'Їкт≥в п≥д мишею наш магазин
-            if (result.gameObject == shopPanel || result.gameObject.transform.IsChildOf(shopPanel.transform))
+            foreach (var panel in uiPanels)
             {
-                return true;
+                // ѕерев≥р€Їмо, чи панель ≥снуЇ, чи вона активна ≥ чи миша над нею (або њњ д≥тьми)
+                if (panel != null && panel.activeInHierarchy)
+                {
+                    if (result.gameObject == panel || result.gameObject.transform.IsChildOf(panel.transform))
+                    {
+                        return true;
+                    }
+                }
             }
         }
         return false;

@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: -1442504859, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  m_Sprite: {fileID: -877461318695221028, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -105,22 +105,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 14
   spritesForAnimation:
-  - {fileID: -3582768867960430704, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -1217072336453439025, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 8775652517144319227, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -7346714851781164974, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -6925887734033872888, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8507999604694196634, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -8984320829026630559, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: 6191790684904217831, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4351611495106405588, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -4663365283415034387, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5546818832371308766, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  - {fileID: -5395187459698883591, guid: dfbe29f4474202b4d92f19f3719606f4, type: 3}
-  icon: {fileID: -1442504859, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  - {fileID: -6022105075868974432, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: -1860102726242206006, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: 8279658499112072665, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: -2339312211107004784, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: -1565553076385758407, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: 2852977213797365645, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: -8639870159770256109, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: 3628836451186868760, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: -5214057170926554024, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: 7410148606595614994, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: -1715284240919967683, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  - {fileID: 310952734218084765, guid: 8375a9c1aabbecf4abc984091a730076, type: 3}
+  icon: {fileID: -877461318695221028, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 1
   foodToRecover: 0
-  damage: 4
+  damage: 8
   priceToSell: 20
   priceToBuy: 100
   description: Iron Axe

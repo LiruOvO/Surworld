@@ -61,7 +61,7 @@ public class DayNightCycle : MonoBehaviour
         DisplayTime();
     }
     
-    void DisplayTime()
+    public void DisplayTime()
     {
         float totalHours = currentTime * 24f;
 

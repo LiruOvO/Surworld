@@ -40,9 +40,13 @@ public class SaveController : MonoBehaviour
         saveData.playerName = DataManager.Instance.playerName;
 
         //здоров'я та їжа
-        saveData.health = playerObject.GetComponent<HealthManager>().currentHealth;
-        saveData.hunger = playerObject.GetComponent<HungerManager>().currentHunger;
-        saveData.coins = playerObject.GetComponent<Player>().GetCoins();
+        if (playerObject != null)
+        {
+            saveData.health = playerObject.GetComponent<HealthManager>().currentHealth;
+            saveData.hunger = playerObject.GetComponent<HungerManager>().currentHunger;
+            saveData.coins = playerObject.GetComponent<Player>().GetCoins();
+        }
+            
 
         //зовнішність
         saveData.hairSprites = SpritesToNames(DataManager.Instance.selectedHair, "Hair");
@@ -74,20 +78,25 @@ public class SaveController : MonoBehaviour
 
             GameObject playerObject = GameObject.FindGameObjectWithTag("Player"); //координати гравця
             Player player = playerObject != null ? playerObject.GetComponent<Player>() : null;
-            if (playerObject != null) playerObject.transform.position = saveData.playerPosition;
             var dm = DataManager.Instance;
+            if (playerObject != null)
+            {                
+                if (playerObject != null) playerObject.transform.position = saveData.playerPosition;
+                
 
-            //здоров'я та їжа
-            HealthManager hm = playerObject.GetComponent<HealthManager>();
-            HungerManager hnm = playerObject.GetComponent<HungerManager>();
-            hm.currentHealth = saveData.health;
-            hnm.currentHunger = saveData.hunger;
-            hm.healthSlider.value = saveData.health;
-            hnm.hungerSlider.value = saveData.hunger;
-            //монети
-            Player pl = playerObject.GetComponent<Player>();
-            pl.AddMoney(saveData.coins);
-            pl.coinsAmmount.text = saveData.coins.ToString();
+                //здоров'я та їжа
+                HealthManager hm = playerObject.GetComponent<HealthManager>();
+                HungerManager hnm = playerObject.GetComponent<HungerManager>();
+                hm.currentHealth = saveData.health;
+                hnm.currentHunger = saveData.hunger;
+                hm.healthSlider.value = saveData.health;
+                hnm.hungerSlider.value = saveData.hunger;
+                //монети
+                Player pl = playerObject.GetComponent<Player>();
+                pl.AddMoney(saveData.coins);
+                pl.coinsAmmount.text = saveData.coins.ToString();
+            }
+               
 
 
             //зовнішність

@@ -80,12 +80,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 5941773899504188461, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  m_Sprite: {fileID: -7233366584844903599, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.14, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 5
   spritesForAnimation: []
-  icon: {fileID: 5941773899504188461, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
+  icon: {fileID: -7233366584844903599, guid: d05bdb2e965a97848b0f7a769f556686, type: 3}
   maxAllowed: 99
   foodToRecover: 0
   damage: 1

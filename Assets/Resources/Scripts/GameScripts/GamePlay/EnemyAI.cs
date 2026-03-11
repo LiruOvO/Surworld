@@ -217,9 +217,15 @@ public class EnemyAI : MonoBehaviour
         rb.angularVelocity = 0f;
         rb.simulated = false;
 
+        Collectable itemPrefab = ItemManager.Instance.GetItemByType(CollectableType.SLIME);
+        Vector3 spawnLocation = transform.position;
+        Vector3 spawnOffset = new Vector3(Random.Range(-0.3f, 0f), Random.Range(-1.3f, -1.5f), 0f);
+        Transform collectablesParent = GameObject.Find("Collectables")?.transform;
+        Instantiate(itemPrefab, spawnLocation + spawnOffset, Quaternion.identity, collectablesParent);
+
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
-        Destroy(gameObject, 2.0f);
+        Destroy(gameObject, 2.0f);        
     }
     void TryAttackPlayer()
     {

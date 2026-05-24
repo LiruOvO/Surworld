@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Shop Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Shop
+  m_TableCollectionNameGuidString: fd57067aaf72b4a4aa200e7d238fa9af
+  m_Entries:
+  - m_Id: 82701238272
+    m_Key: btn_buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 139638915072
+    m_Key: btn_sell
+    m_Metadata:
+      m_Items: []
+  - m_Id: 190599708672
+    m_Key: description_price
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41171994853376
+    m_Key: item_stone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41245911072768
+    m_Key: item_coal
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41574610288640
+    m_Key: item_copper
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41765308514304
+    m_Key: item_iron
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41857704837120
+    m_Key: item_slime
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41929632956416
+    m_Key: item_leaf
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41984192462848
+    m_Key: item_wood
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42063078932480
+    m_Key: item_stick
+    m_Metadata:
+      m_Items: []
+  - m_Id: 41363850706944
+    m_Key: food_blueberry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42195795099648
+    m_Key: tool_wooden_axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42365341450240
+    m_Key: tool_stone_axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42413986988032
+    m_Key: tool_copper_axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42504013529088
+    m_Key: tool_iron_axe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42666190487552
+    m_Key: tool_wooden_pickaxe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42722880700416
+    m_Key: tool_stone_pickaxe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42759153041408
+    m_Key: tool_copper_pickaxe
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42774546137088
+    m_Key: tool_iron_pickaxe
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 7312422436116103450
+  references:
+    version: 2
+    RefIds:
+    - rid: 7312422436116103450
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1779452546325

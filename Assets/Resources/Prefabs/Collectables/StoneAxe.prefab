@@ -123,7 +123,7 @@ MonoBehaviour:
   damage: 4
   priceToSell: 5
   priceToBuy: 25
-  description: Stone Axe
+  localizationKey: tool_stone_axe
   isConsumable: 0
 --- !u!50 &5736610280730762073
 Rigidbody2D:

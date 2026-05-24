@@ -65,6 +65,15 @@ public class PlayerPartsAnimation : MonoBehaviour
     {
         // Встановлюємо новий масив спрайтів
         collectable = newCollectableSprites;
+
+        if (collectable != null && collectable.Length > 0)
+        {
+            collectableRenderer.sprite = collectable[2];
+        }
+        else
+        {
+            collectableRenderer.sprite = null;
+        }
     }
     public void SetColFrame(int frameIndex)
     {

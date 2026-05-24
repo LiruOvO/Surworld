@@ -111,7 +111,7 @@ MonoBehaviour:
   damage: 1
   priceToSell: 5
   priceToBuy: 25
-  description: Iron Ore
+  localizationKey: item_iron
   isConsumable: 0
 --- !u!58 &5118095898071595941
 CircleCollider2D:

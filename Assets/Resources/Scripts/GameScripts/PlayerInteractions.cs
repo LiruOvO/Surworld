@@ -1,13 +1,13 @@
-using NUnit.Framework.Constraints;
+п»їusing NUnit.Framework.Constraints;
 using UnityEngine;
 
-//Анімація для добування ресурсів
+//РђРЅС–РјР°С†С–СЏ РґР»СЏ РґРѕР±СѓРІР°РЅРЅСЏ СЂРµСЃСѓСЂСЃС–РІ
 
 public class PlayerInteractions : MonoBehaviour
 {
     [Header("Attack Settings")]
-    public float attackCooldown = 0.4f; // час паузи
-    private float nextAttackTime = 0f;  // коли можна буде атакувати наступний раз
+    public float attackCooldown = 0.4f; // С‡Р°СЃ РїР°СѓР·Рё
+    private float nextAttackTime = 0f;  // РєРѕР»Рё РјРѕР¶РЅР° Р±СѓРґРµ Р°С‚Р°РєСѓРІР°С‚Рё РЅР°СЃС‚СѓРїРЅРёР№ СЂР°Р·
 
     private float maxDistance = 1.5f;
     private Vector2 interactionOffset = new Vector2(0f, -0.6f);
@@ -30,17 +30,17 @@ public class PlayerInteractions : MonoBehaviour
 
     private void HandleInterction()
     {
-        Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Отримання позиції миші
-        Collider2D hitCollider = Physics2D.OverlapPoint(clickPosition); //Створення променю від миші
+        Vector2 clickPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //РћС‚СЂРёРјР°РЅРЅСЏ РїРѕР·РёС†С–С— РјРёС€С–
+        Collider2D hitCollider = Physics2D.OverlapPoint(clickPosition); //РЎС‚РІРѕСЂРµРЅРЅСЏ РїСЂРѕРјРµРЅСЋ РІС–Рґ РјРёС€С–
         if (hitCollider != null)
         {
-            Resource resource = hitCollider.GetComponent<Resource>(); //Перевірка що це за ресурс
+            Resource resource = hitCollider.GetComponent<Resource>(); //РџРµСЂРµРІС–СЂРєР° С‰Рѕ С†Рµ Р·Р° СЂРµСЃСѓСЂСЃ
             Debug.Log(hitCollider.name);
             if (resource != null)
             {
                 Vector2 playerCheckPosition = (Vector2)transform.position + interactionOffset;
                 Vector2 closestPoint = hitCollider.ClosestPoint(playerCheckPosition);
-                float distance = Vector2.Distance(playerCheckPosition, closestPoint); //Розріхунок дистанції між гравцем і ресурсом
+                float distance = Vector2.Distance(playerCheckPosition, closestPoint); //Р РѕР·СЂС–С…СѓРЅРѕРє РґРёСЃС‚Р°РЅС†С–С— РјС–Р¶ РіСЂР°РІС†РµРј С– СЂРµСЃСѓСЂСЃРѕРј
 
                 if (distance <= maxDistance)
                 {
@@ -84,6 +84,8 @@ public class PlayerInteractions : MonoBehaviour
 
                         animator.SetBool("isInteracting", true);
                         nextAttackTime = Time.time + attackCooldown;
+
+                    Invoke(nameof(RestoreWeaponSprite), attackCooldown);
                 }
             }
         }
@@ -93,9 +95,28 @@ public class PlayerInteractions : MonoBehaviour
         }
     }
 
-    //Скидає стан в аніматорі
+    //РЎРєРёРґР°С” СЃС‚Р°РЅ РІ Р°РЅС–РјР°С‚РѕСЂС–
     public void OnAnimEnd()
     {
         animator.SetBool("isInteracting", false);
+    }
+
+    private void RestoreWeaponSprite()
+    {
+        PlayerPartsAnimation parts = GetComponent<PlayerPartsAnimation>();
+        if (parts == null) return;
+
+        if (selectedItem == CollectableType.NONE)
+        {
+            parts.collectableRenderer.sprite = null;
+        }
+        else
+        {
+            Collectable itemData = ItemManager.Instance.GetItemByType(selectedItem);
+            if (itemData != null && itemData.spritesForAnimation != null)
+            {
+                parts.SetCollectibleSprites(itemData.spritesForAnimation);
+            }
+        }
     }
 }

@@ -1,12 +1,12 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Localization.Settings;  
+using System.Collections;                
 
 public class NPCDialogues : MonoBehaviour
 {
-    [TextArea(3, 10)]
-    public string[] dialogueLines;
     byte dialogue = 0;
 
     public GameObject dialogueArea;
@@ -17,13 +17,20 @@ public class NPCDialogues : MonoBehaviour
 
     Player playerScript;
     Inventory_UI inventory_UI;
-
-
     public GameManager gameManager;
 
     private void Awake()
     {
         LoadDialogue();
+    }
+
+    // Новий метод — отримати перекладений рядок
+    private IEnumerator ShowLocalizedDialogue(string key)
+    {
+        var op = LocalizationSettings.StringDatabase
+            .GetLocalizedStringAsync("Dialogues", key);
+        yield return op;
+        conversationArea.text = op.Result;
     }
 
     public void TalkTo(string NPCName, GameObject player)
@@ -34,15 +41,16 @@ public class NPCDialogues : MonoBehaviour
 
         if (NPCName == "NPC_Jolie")
         {
-            switch(dialogue)
+            switch (dialogue)
             {
                 case 0:
                     mainActionButton.onClick.AddListener(CloseDialogue);
                     dialogueArea.SetActive(true);
                     playerName.text = DataManager.Instance.playerName;
                     npcName.text = NPCName;
-                    conversationArea.text = dialogueLines[0];
+                    StartCoroutine(ShowLocalizedDialogue("NPC_jolie_01")); 
                     GiveItem(CollectableType.WOODEN_PICKAXE);
+                    GiveItem(CollectableType.WOODEN_AXE);
                     dialogue++;
                     SaveDialogue();
                     break;
@@ -51,16 +59,15 @@ public class NPCDialogues : MonoBehaviour
                     dialogueArea.SetActive(true);
                     playerName.text = DataManager.Instance.playerName;
                     npcName.text = NPCName;
-                    conversationArea.text = dialogueLines[1];                    
+                    StartCoroutine(ShowLocalizedDialogue("NPC_jolie_02")); 
                     break;
             }
         }
     }
 
-    public void CloseDialogue()
-    {
-       dialogueArea.SetActive(false);
-    }
+
+    public void CloseDialogue() => dialogueArea.SetActive(false);
+
     public void GiveItem(CollectableType item)
     {
         Collectable tools = ItemManager.Instance.GetItemByType(item);
@@ -74,14 +81,13 @@ public class NPCDialogues : MonoBehaviour
         PlayerPrefs.SetInt(saveKey, dialogue);
         PlayerPrefs.Save();
     }
+
     public void LoadDialogue()
     {
         string saveKey = "DialogueState_" + gameObject.name;
-        int savedState = PlayerPrefs.GetInt(saveKey, 0);
-        dialogue = (byte)savedState;
+        dialogue = (byte)PlayerPrefs.GetInt(saveKey, 0);
     }
 
-    //��� ����
     public void GoToTheSaloon()
     {
         dialogueArea.SetActive(false);

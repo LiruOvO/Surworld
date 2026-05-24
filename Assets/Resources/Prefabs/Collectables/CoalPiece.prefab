@@ -111,7 +111,7 @@ MonoBehaviour:
   damage: 1
   priceToSell: 3
   priceToBuy: 15
-  description: Coal
+  localizationKey: item_coal
   isConsumable: 0
 --- !u!58 &5118095898071595941
 CircleCollider2D:

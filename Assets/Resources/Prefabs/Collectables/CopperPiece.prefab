@@ -111,7 +111,7 @@ MonoBehaviour:
   damage: 1
   priceToSell: 2
   priceToBuy: 10
-  description: Copper Ore
+  localizationKey: item_copper
   isConsumable: 0
 --- !u!58 &5118095898071595941
 CircleCollider2D:

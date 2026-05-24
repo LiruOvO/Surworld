@@ -123,7 +123,7 @@ MonoBehaviour:
   damage: 6
   priceToSell: 10
   priceToBuy: 50
-  description: Copper Axe
+  localizationKey: tool_copper_axe
   isConsumable: 0
 --- !u!50 &5736610280730762073
 Rigidbody2D:

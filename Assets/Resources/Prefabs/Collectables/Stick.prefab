@@ -111,7 +111,7 @@ MonoBehaviour:
   damage: 1
   priceToSell: 1
   priceToBuy: 5
-  description: Stick
+  localizationKey: item_stick
   isConsumable: 0
 --- !u!50 &4060567626015675212
 Rigidbody2D:

@@ -123,7 +123,7 @@ MonoBehaviour:
   damage: 8
   priceToSell: 20
   priceToBuy: 100
-  description: Iron Pickaxe
+  localizationKey: tool_iron_pickaxe
   isConsumable: 0
 --- !u!50 &5736610280730762073
 Rigidbody2D:

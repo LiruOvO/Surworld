@@ -111,7 +111,7 @@ MonoBehaviour:
   damage: 1
   priceToSell: 2
   priceToBuy: 10
-  description: Wood
+  localizationKey: item_wood
   isConsumable: 0
 --- !u!50 &4060567626015675212
 Rigidbody2D:

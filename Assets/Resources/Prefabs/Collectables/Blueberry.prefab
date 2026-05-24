@@ -111,7 +111,7 @@ MonoBehaviour:
   damage: 0
   priceToSell: 1
   priceToBuy: 5
-  description: Blueberry
+  localizationKey: food_blueberry
   isConsumable: 1
 --- !u!50 &5736610280730762073
 Rigidbody2D:

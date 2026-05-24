@@ -15,5 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GameWorld.unity
     guid: 6abc1495f522eec46af31249377e1c25
   m_configObjects:
+    com.unity.addressableassets: {fileID: 11400000, guid: 129e20bca85af9a4a812aa1026367391, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    com.unity.localization.settings: {fileID: 11400000, guid: c637e669ec3f09d48bd444d20b6052d7, type: 2}
   m_UseUCBPForAssetBundles: 0

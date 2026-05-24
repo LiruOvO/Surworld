@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Dialogues_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 33eb02f880a1cca439077deb2aa3e272, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 68008591360
+    m_Localized: Oh, I see you're new here. I'm the stylist - Jolie. I have something
+      for you!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 72420999168
+    m_Localized: Do you want to change your style? Then you've come to the right
+      place!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48234259070976
+    m_Localized: Do you really want to sleep?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48518016319488
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 48563486769152
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

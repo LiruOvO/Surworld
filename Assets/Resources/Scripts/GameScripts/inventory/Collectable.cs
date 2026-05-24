@@ -13,7 +13,7 @@ public class Collectable : MonoBehaviour
     public int damage;
     public int priceToSell;
     public int priceToBuy;
-    public string description;
+    public string localizationKey;
 
     public bool isConsumable;
 

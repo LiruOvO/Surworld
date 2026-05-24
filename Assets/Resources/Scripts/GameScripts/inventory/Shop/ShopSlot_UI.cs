@@ -1,4 +1,4 @@
-using UnityEngine;
+п»їusing UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.EventSystems;
@@ -7,12 +7,17 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
 {
     public Image itemIcon;
     public TextMeshProUGUI priceText;
-    public TextMeshProUGUI quantityText;
+    public TMP_InputField quantityInput; // в†ђ Р·РјС–РЅРёР»Рё Р· Text РЅР° InputField
+    public GameObject cancelCircle;
+    public Button btnPlus;
+    public Button btnMinus;
 
     private Inventory_UI inventoryUI;
-    private Slot_UI selectedSourceSlot; // Запам'ятовуємо, звідки прийшов предмет
+    private Slot_UI selectedSourceSlot;
+    private int quantity = 1;
+    private int maxQuantity = 1;
+    private Collectable currentItem;
 
-    public GameObject cancelCircle;
     void Awake()
     {
         inventoryUI = Object.FindFirstObjectByType<Inventory_UI>();
@@ -21,6 +26,12 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
     void Start()
     {
         ClearSlot();
+
+        btnPlus.onClick.AddListener(IncreaseQuantity);
+        btnMinus.onClick.AddListener(DecreaseQuantity);
+
+        // Р’РІС–Рґ РІСЂСѓС‡РЅСѓ
+        quantityInput.onEndEdit.AddListener(OnQuantityEdited);
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -28,58 +39,90 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
         if (eventData.pointerDrag != null)
         {
             Slot_UI sourceSlot = eventData.pointerDrag.GetComponent<Slot_UI>();
-
             if (sourceSlot != null && sourceSlot.slotCollectible != CollectableType.NONE)
-            {
                 SelectItemForSale(sourceSlot);
-            }
         }
     }
 
     void SelectItemForSale(Slot_UI sourceUI)
     {
-        selectedSourceSlot = sourceUI; // Зберігаємо посилання на слот інвентарю
-
+        selectedSourceSlot = sourceUI;
         int slotIndex = inventoryUI.slots.IndexOf(sourceUI);
         if (slotIndex == -1) slotIndex = inventoryUI.slotsMini.IndexOf(sourceUI);
 
         if (slotIndex != -1)
         {
             Inventory.Slot inventorySlot = inventoryUI.player.inventory.slots[slotIndex];
-            Collectable itemData = ItemManager.Instance.GetItemByType(inventorySlot.type);
+            currentItem = ItemManager.Instance.GetItemByType(inventorySlot.type);
+            maxQuantity = inventorySlot.count;
 
-            if (itemData != null)
+            if (currentItem != null)
             {
-                // Візуально відображаємо в магазині
-                Sprite iconFromManager = itemData.GetComponent<SpriteRenderer>().sprite;
+                Sprite iconFromManager = currentItem.GetComponent<SpriteRenderer>().sprite;
                 itemIcon.sprite = iconFromManager;
                 itemIcon.color = Color.white;
 
-                quantityText.text = "1"; // Або inventorySlot.count.ToString()
-                priceText.text = $"{itemData.priceToSell} $";
+                quantity = 1;
+                UpdateUI();
             }
         }
+
         if (cancelCircle != null) cancelCircle.SetActive(true);
+        btnPlus.gameObject.SetActive(true);
+        btnMinus.gameObject.SetActive(true);
+        quantityInput.gameObject.SetActive(true);
     }
 
-    // Цей метод потрібно повісити на кнопку "SELL" в Unity
+    void IncreaseQuantity()
+    {
+        if (quantity < maxQuantity) quantity++;
+        UpdateUI();
+    }
+
+    void DecreaseQuantity()
+    {
+        if (quantity > 1) quantity--;
+        UpdateUI();
+    }
+
+    void OnQuantityEdited(string value)
+    {
+        if (int.TryParse(value, out int parsed))
+            quantity = Mathf.Clamp(parsed, 1, maxQuantity);
+        UpdateUI();
+    }
+
+    void UpdateUI()
+    {
+        quantityInput.text = quantity.ToString();
+        if (currentItem != null)
+            priceText.text = $"{currentItem.priceToSell * quantity} $";
+    }
+
     public void SellCurrentItem()
     {
         if (selectedSourceSlot != null)
         {
-            // Викликаємо продаж через існуючу логіку інвентарю
-            inventoryUI.SellItem(selectedSourceSlot);
+            int slotIndex = inventoryUI.slots.IndexOf(selectedSourceSlot);
+            if (slotIndex == -1) slotIndex = inventoryUI.slotsMini.IndexOf(selectedSourceSlot);
 
-            // Після продажу очищаємо слот магазину
+            if (slotIndex != -1)
+            {
+                for (int i = 0; i < quantity; i++)
+                {
+                    inventoryUI.player.AddMoney(currentItem.priceToSell);
+                    inventoryUI.player.inventory.Remove(slotIndex);
+                }
+                inventoryUI.Refresh();
+            }
+
             selectedSourceSlot = null;
             ClearSlot();
         }
     }
-    // Цей метод вішаємо на кнопку-хрестик
+
     public void CancelSale()
     {
-        // Просто забуваємо про посилання на слот інвентарю 
-        // і очищаємо візуал. Предмет в інвентарі лишається недоторканим.
         selectedSourceSlot = null;
         ClearSlot();
     }
@@ -87,11 +130,16 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
     public void ClearSlot()
     {
         selectedSourceSlot = null;
+        currentItem = null;
+        quantity = 1;
+        maxQuantity = 1;
+
         if (itemIcon != null) { itemIcon.sprite = null; itemIcon.color = new Color(1, 1, 1, 0); }
         if (priceText != null) priceText.text = "";
-        if (quantityText != null) quantityText.text = "";
-
-        // Ховаємо хрестик, якщо в слоті порожньо
+        if (quantityInput != null) quantityInput.text = "";
         if (cancelCircle != null) cancelCircle.SetActive(false);
+        if (btnPlus != null) btnPlus.gameObject.SetActive(false);
+        if (btnMinus != null) btnMinus.gameObject.SetActive(false);
+        if (quantityInput != null) quantityInput.gameObject.SetActive(false);
     }
 }

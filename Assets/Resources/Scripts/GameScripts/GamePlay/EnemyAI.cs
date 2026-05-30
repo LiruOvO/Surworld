@@ -50,7 +50,7 @@ public class EnemyAI : MonoBehaviour
     private float maxWait = 3f;
 
     void Start()
-    {
+    {        
         rb = GetComponent<Rigidbody2D>();
         startPosition = transform.position;
         patrolTarget = startPosition;
@@ -204,6 +204,8 @@ public class EnemyAI : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        AudioSource resourceAudio = this.GetComponent<AudioSource>();
+        resourceAudio.Play();
         if (health <= 0) return;
         health -= amount;
         hpText.text = Mathf.Max(0, health).ToString();

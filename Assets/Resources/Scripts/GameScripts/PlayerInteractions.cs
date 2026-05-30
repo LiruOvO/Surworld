@@ -45,15 +45,16 @@ public class PlayerInteractions : MonoBehaviour
                 if (distance <= maxDistance)
                 {
                     AudioSource resourceAudio = resource.GetComponent<AudioSource>();
-                    resourceAudio.Play();
-
                     if (resource.CanInteractWith(selectedItem) && resource.shouldBeDestroyed)
-                    {
+                    {                       
+                        resourceAudio.Play();
+
                         animator.SetBool("isInteracting", true);
                         resource.ChangeResourceSprite(true);
                     }else if (!resource.shouldBeDestroyed)
                     {
                         resource.ChangeResourceSprite(false);
+                        resourceAudio.Play();
                     }
                 }
             }

@@ -111,4 +111,34 @@ public class Inventory
             slot.spritesForAniimation = null;
         }
     }
+
+    //Для крафту
+    public int GetAmount(CollectableType type)
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot.type == type)
+                return slot.count;
+        }
+        return 0;
+    }
+
+    public void Remove(CollectableType type, int amount)
+    {
+        foreach (Slot slot in slots)
+        {
+            if (slot.type == type)
+            {
+                slot.count -= amount;
+                if (slot.count <= 0)
+                {
+                    slot.count = 0;
+                    slot.type = CollectableType.NONE;
+                    slot.icon = null;
+                    slot.spritesForAniimation = null;
+                }
+                return;
+            }
+        }
+    }
 }

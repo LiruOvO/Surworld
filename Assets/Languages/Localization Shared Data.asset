@@ -83,6 +83,14 @@ MonoBehaviour:
     m_Key: btn_nickname_customization
     m_Metadata:
       m_Items: []
+  - m_Id: 3364006112837632
+    m_Key: title_recipes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3364751117697024
+    m_Key: btn_craft
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

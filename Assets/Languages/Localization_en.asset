@@ -88,6 +88,14 @@ MonoBehaviour:
     m_Localized: Enter nickname
     m_Metadata:
       m_Items: []
+  - m_Id: 3364006112837632
+    m_Localized: Recipes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3364751117697024
+    m_Localized: Craft
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

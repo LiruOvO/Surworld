@@ -106,6 +106,10 @@ MonoBehaviour:
     m_Localized: Jonathan
     m_Metadata:
       m_Items: []
+  - m_Id: 3733614808317952
+    m_Localized: Strawberry
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

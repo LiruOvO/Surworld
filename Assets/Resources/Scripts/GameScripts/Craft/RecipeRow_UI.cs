@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+//Скрипт для рядків із рецептами крафту
+
 public class RecipeRow_UI : MonoBehaviour
 {
     public Image[] ingredientIcons;

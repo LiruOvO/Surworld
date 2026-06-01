@@ -1,5 +1,7 @@
 using UnityEngine;
 
+//Логіка крафту предметів
+
 public class CraftingManager : MonoBehaviour
 {
     public static CraftingManager Instance;

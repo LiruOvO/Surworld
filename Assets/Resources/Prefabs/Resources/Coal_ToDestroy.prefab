@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7369352636242171379}
   - component: {fileID: 555694277631934611}
   m_Layer: 0
-  m_Name: Iron
+  m_Name: Coal_ToDestroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: -1996000994, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
+  m_Sprite: {fileID: 1222283945, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,13 +103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d04224f23dd7a42ba00d4e865d4f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 6
+  type: 7
   sprites:
-  - {fileID: -1996000994, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
-  - {fileID: 1408713233, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
-  - {fileID: 898211482, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
-  itemToDropType: 15
-  requiredTools: 030000000a000000
+  - {fileID: 1222283945, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
+  - {fileID: 1101058463, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
+  - {fileID: 1516406846, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
+  itemToDropType: 16
+  requiredTools: 02000000030000000a000000
   shouldBeDestroyed: 1
 --- !u!61 &58912985390750561
 BoxCollider2D:

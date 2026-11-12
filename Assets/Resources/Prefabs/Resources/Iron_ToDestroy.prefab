@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 672395667044802273}
   - component: {fileID: 397858702067507770}
   - component: {fileID: 58912985390750561}
-  - component: {fileID: 7371499753121399856}
-  - component: {fileID: 8155284541843948918}
+  - component: {fileID: 7369352636242171379}
+  - component: {fileID: 555694277631934611}
   m_Layer: 0
-  m_Name: Bush
+  m_Name: Iron_ToDestroy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,8 +79,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 11
-  m_Sprite: {fileID: -2083832013, guid: 9e3c6d46358fd624f9a581e7f924e06e, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -1996000994, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,13 +103,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d04224f23dd7a42ba00d4e865d4f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
+  type: 6
   sprites:
-  - {fileID: -2083832013, guid: 9e3c6d46358fd624f9a581e7f924e06e, type: 3}
-  - {fileID: 2140006945, guid: 9e3c6d46358fd624f9a581e7f924e06e, type: 3}
-  itemToDropType: 8
-  requiredTools: 
-  shouldBeDestroyed: 0
+  - {fileID: -1996000994, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
+  - {fileID: 1408713233, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
+  - {fileID: 898211482, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
+  itemToDropType: 15
+  requiredTools: 030000000a000000
+  shouldBeDestroyed: 1
 --- !u!61 &58912985390750561
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,7 +157,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &7371499753121399856
+--- !u!114 &7369352636242171379
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,7 +171,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cursorPointed: {fileID: 2800000, guid: 4a921c718b0707c4098c8448ccda050e, type: 3}
   cursorIdle: {fileID: 2800000, guid: 3e6f7a91112619d4cbea1c0ad8c0547b, type: 3}
---- !u!82 &8155284541843948918
+--- !u!82 &555694277631934611
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -180,8 +181,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5f5409d1c82f9484f91d0bbc040896d8, type: 3}
-  m_Resource: {fileID: 8300000, guid: 5f5409d1c82f9484f91d0bbc040896d8, type: 3}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 6418180475301049370, guid: b792dbe95138f4342a402c4d72b4487d, type: 2}
   m_PlayOnAwake: 0
   m_Volume: 0.2
   m_Pitch: 1

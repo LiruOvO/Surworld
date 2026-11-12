@@ -4,6 +4,12 @@ using UnityEngine;
 //Ресурс який можна добувати, з нього випадають collectible
 public class Resource : MonoBehaviour
 {
+    [Header("Interact prompt (лише для shouldBeDestroyed = false)")]
+    public GameObject interactPrompt; //ЮІ "Натисніть Е"
+    public float interactRadius = 1.5f;
+    public KeyCode interactKey = KeyCode.E;
+    private Transform player;
+
     public ResourceType type;    
     public Sprite[] sprites;
     public CollectableType itemToDropType;
@@ -16,13 +22,46 @@ public class Resource : MonoBehaviour
     private float lastMineTime;
 
     public bool shouldBeDestroyed;
+    private AudioSource audioSource;
 
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         lastMineTime = -cooldownTime;
+
+        var playerObj = GameObject.FindGameObjectWithTag("Player");
+        if (playerObj != null)
+        {
+            Transform pivot = playerObj.transform.Find("Pivot");
+            player = pivot != null ? pivot : playerObj.transform;
+        }
     }
+
+    void Update()
+    {
+        if (shouldBeDestroyed || player == null) return;
+
+        // Кущ повний, якщо на ньому перший спрайт і минув час після останнього збору
+        bool grown = spriteRenderer.sprite == sprites[0]
+                     && Time.time > lastMineTime + cooldownTime + 0.1f;
+
+        if (grown) currentSpriteIndex = 0; // синхронізуємо індекс після відростання
+
+        bool inRange = grown &&
+            Vector2.Distance(transform.position, player.position) <= interactRadius;
+
+        if (interactPrompt != null && interactPrompt.activeSelf != inRange)
+            interactPrompt.SetActive(inRange);
+
+        if (inRange && Input.GetKeyDown(interactKey))
+        {
+            ChangeResourceSprite(false);
+            if (audioSource != null) audioSource.Play();
+        }
+    }
+
     public bool CanInteractWith(CollectableType toolType)
     {
         // Перевіряє, чи присутній тип інструменту (toolType) у списку requiredTools

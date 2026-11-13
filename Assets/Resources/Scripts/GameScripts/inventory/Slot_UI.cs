@@ -71,26 +71,22 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, I
 
         GameObject dropObject = eventData.pointerCurrentRaycast.gameObject;
 
-        Slot_UI targetSlot = null;
+        // Відпустили над UI
         if (dropObject != null)
         {
-            targetSlot = dropObject.GetComponent<Slot_UI>();
+            Slot_UI targetSlot = dropObject.GetComponent<Slot_UI>();
             if (targetSlot == null) targetSlot = dropObject.GetComponentInParent<Slot_UI>();
-        }
 
-        // Відпустили на іншому слоті: обмін
-        if (targetSlot != null)
-        {
-            if (targetSlot != this) inventoryUI.SwapSlots(this, targetSlot);
+            // Над іншим слотом: обмін
+            if (targetSlot != null && targetSlot != this)
+                inventoryUI.SwapSlots(this, targetSlot);
+
+            // Над будь-яким іншим UI (магазин, зона продажу, панель): нічого не викидаємо
             return;
         }
 
-        // Відпустили поза панеллю інвентаря: викидаємо весь стак
-        RectTransform panelRect = inventoryUI.inventoryPanel.GetComponent<RectTransform>();
-        bool overPanel = inventoryUI.inventoryPanel.activeSelf &&
-                         RectTransformUtility.RectangleContainsScreenPoint(panelRect, eventData.position);
-
-        if (!overPanel && slotCollectible != CollectableType.NONE)
+        // Курсор над порожнім світом: викидаємо весь стак
+        if (slotCollectible != CollectableType.NONE)
         {
             int id = inventoryUI.slots.IndexOf(this);
             if (id == -1) id = inventoryUI.slotsMini.IndexOf(this);

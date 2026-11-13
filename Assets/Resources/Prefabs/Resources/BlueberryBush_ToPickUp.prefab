@@ -110,12 +110,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactPrompt: {fileID: 1618205325750140675}
   interactRadius: 1.5
-  interactKey: 101
   type: 3
   sprites:
   - {fileID: -300537459, guid: 9e3c6d46358fd624f9a581e7f924e06e, type: 3}
   - {fileID: 1352955200029874055, guid: 9e3c6d46358fd624f9a581e7f924e06e, type: 3}
-  itemToDropType: 9
+  drops:
+  - item: 9
+    minAmount: 1
+    maxAmount: 1
+    chance: 100
   requiredTools: 
   shouldBeDestroyed: 0
 --- !u!61 &58912985390750561

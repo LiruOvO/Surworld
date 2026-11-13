@@ -10,7 +10,8 @@ public class Resource : MonoBehaviour, IInteractable
 
     public ResourceType type;    
     public Sprite[] sprites;
-    public CollectableType itemToDropType;
+    [Header("Drop settings")]
+    public DropEntry[] drops;
 
     public CollectableType[] requiredTools;
 
@@ -113,14 +114,35 @@ public class Resource : MonoBehaviour, IInteractable
     private IEnumerator DropItem(float delay)
     {
         yield return new WaitForSeconds(delay);
-        Collectable itemPrefab = ItemManager.Instance.GetItemByType(itemToDropType);
 
-        Vector3 spawnLocation = transform.position;
-        Vector3 spawnOffset = new Vector3(Random.Range(-0.3f, 0f), Random.Range(-1.3f, -1.5f), 0f);
+        if (drops == null) yield break;
 
         Transform collectablesParent = GameObject.Find("Collectables")?.transform;
-        Instantiate(itemPrefab, spawnLocation + spawnOffset, Quaternion.identity, collectablesParent);
+
+        foreach (DropEntry entry in drops)
+        {
+            // кожен предмет кидає свій шанс окремо
+            if (Random.Range(0f, 100f) > entry.chance) continue;
+
+            Collectable itemPrefab = ItemManager.Instance.GetItemByType(entry.item);
+            if (itemPrefab == null) continue;
+
+            int amount = Random.Range(entry.minAmount, entry.maxAmount + 1);
+            for (int i = 0; i < amount; i++)
+            {
+                Vector3 spawnOffset = new Vector3(Random.Range(-0.5f, 0.5f), Random.Range(-1.5f, -1.2f), 0f);
+                Instantiate(itemPrefab, transform.position + spawnOffset, Quaternion.identity, collectablesParent);
+            }
+        }
     }
 }
-public enum ResourceType { Stone, Copper, Wood, Blueberry, Bush, Tree, Iron, Coal, Strawberry }
+public enum ResourceType { Stone, Copper, Wood, Blueberry, Bush, Tree, Iron, Coal, Strawberry, Apple }
+[System.Serializable]
+public class DropEntry
+{
+    public CollectableType item;
+    public int minAmount = 1;
+    public int maxAmount = 1;
+    [Range(0f, 100f)] public float chance = 100f; // шанс, %
+}
 

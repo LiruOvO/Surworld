@@ -38,6 +38,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &672395667044802273
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -56,6 +57,8 @@ SpriteRenderer:
   m_RayTracingAccelStructBuildFlagsOverride: 0
   m_RayTracingAccelStructBuildFlags: 1
   m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -77,9 +80,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
+  m_MaskInteraction: 0
   m_Sprite: {fileID: 606592625336943909, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -89,7 +94,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &397858702067507770
 MonoBehaviour:
@@ -103,12 +107,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8d04224f23dd7a42ba00d4e865d4f0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  interactPrompt: {fileID: 0}
+  interactRadius: 1.5
   type: 1
   sprites:
   - {fileID: 606592625336943909, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   - {fileID: 813674105352346777, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
   - {fileID: 1519986222, guid: e928f074ee66b4247b3a1e90d4fe43d2, type: 3}
-  itemToDropType: 5
+  drops:
+  - item: 5
+    minAmount: 1
+    maxAmount: 1
+    chance: 100
   requiredTools: 02000000030000000a000000
   shouldBeDestroyed: 1
 --- !u!61 &58912985390750561

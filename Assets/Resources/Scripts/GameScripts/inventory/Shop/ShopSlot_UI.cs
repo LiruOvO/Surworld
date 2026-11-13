@@ -13,10 +13,47 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
     public Button btnMinus;
 
     private Inventory_UI inventoryUI;
+    public TextMeshProUGUI quantityLabel;
     private Slot_UI selectedSourceSlot;
     private int quantity = 1;
     private int maxQuantity = 1;
     private Collectable currentItem;
+
+    //Оце для утримання кнопок + та - у визначенні кті на продаж
+    private int holdDir;
+    private float nextStep, holdTime;
+    private bool repeated;
+
+    void Update()
+    {
+        if (holdDir == 0) return;
+        if (!Input.GetMouseButton(0)) { holdDir = 0; return; }
+
+        holdTime += Time.unscaledDeltaTime;
+        if (Time.unscaledTime < nextStep) return;
+
+        repeated = true;
+        Step(holdDir);
+        nextStep = Time.unscaledTime + Mathf.Lerp(0.2f, 0.04f, holdTime / 2.5f);
+    }
+
+    void Step(int d) { if (d > 0) IncreaseQuantity(); else DecreaseQuantity(); }
+
+    void Hold(Button b, int d)
+    {
+        // одиночний клік
+        b.onClick.AddListener(() =>
+        {
+            if (repeated) { repeated = false; return; } // після утримання зайвий крок не потрібен
+            Step(d);
+        });
+
+        // початок утримання: автоповтор стартує лише через 0.6 с
+        var t = b.gameObject.AddComponent<EventTrigger>();
+        var down = new EventTrigger.Entry { eventID = EventTriggerType.PointerDown };
+        down.callback.AddListener(_ => { holdDir = d; holdTime = 0; repeated = false; nextStep = Time.unscaledTime + 0.6f; });
+        t.triggers.Add(down);
+    }//
 
     void Awake()
     {
@@ -25,10 +62,9 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
 
     void Start()
     {
+        Hold(btnPlus, +1);
+        Hold(btnMinus, -1);
         ClearSlot();
-
-        btnPlus.onClick.AddListener(IncreaseQuantity);
-        btnMinus.onClick.AddListener(DecreaseQuantity);
 
         // Ввід вручну
         quantityInput.onEndEdit.AddListener(OnQuantityEdited);
@@ -88,13 +124,14 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
     void OnQuantityEdited(string value)
     {
         if (int.TryParse(value, out int parsed))
-            quantity = Mathf.Clamp(parsed, 1, maxQuantity);
+            quantity = Mathf.Clamp(parsed, 1, Mathf.Max(1, maxQuantity));
         UpdateUI();
     }
 
     void UpdateUI()
     {
         quantityInput.text = quantity.ToString();
+        if (quantityLabel != null) quantityLabel.text = quantity.ToString();
         if (currentItem != null)
             priceText.text = $"{currentItem.priceToSell * quantity} $";
     }
@@ -141,5 +178,6 @@ public class ShopSlot_UI : MonoBehaviour, IDropHandler
         if (btnPlus != null) btnPlus.gameObject.SetActive(false);
         if (btnMinus != null) btnMinus.gameObject.SetActive(false);
         if (quantityInput != null) quantityInput.gameObject.SetActive(false);
+        if (quantityLabel != null) quantityLabel.text = "";
     }
 }

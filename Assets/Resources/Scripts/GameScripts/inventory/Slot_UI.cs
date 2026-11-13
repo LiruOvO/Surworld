@@ -65,24 +65,36 @@ public class Slot_UI : MonoBehaviour, IPointerClickHandler, IBeginDragHandler, I
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
-        // 3. Повертаємо іконку назад у її рідний слот
         itemIcon.transform.SetParent(this.transform);
         itemIcon.transform.position = originalPosition;
-
-        // Встановлюємо порядок у самому слоті (щоб іконка була під текстом кількості, якщо треба)
         itemIcon.transform.SetAsFirstSibling();
 
-        // Логіка обміну (та сама, що вже була)
         GameObject dropObject = eventData.pointerCurrentRaycast.gameObject;
+
+        Slot_UI targetSlot = null;
         if (dropObject != null)
         {
-            Slot_UI targetSlot = dropObject.GetComponent<Slot_UI>();
+            targetSlot = dropObject.GetComponent<Slot_UI>();
             if (targetSlot == null) targetSlot = dropObject.GetComponentInParent<Slot_UI>();
+        }
 
-            if (targetSlot != null && targetSlot != this)
-            {
-                inventoryUI.SwapSlots(this, targetSlot);
-            }
+        // Відпустили на іншому слоті: обмін
+        if (targetSlot != null)
+        {
+            if (targetSlot != this) inventoryUI.SwapSlots(this, targetSlot);
+            return;
+        }
+
+        // Відпустили поза панеллю інвентаря: викидаємо весь стак
+        RectTransform panelRect = inventoryUI.inventoryPanel.GetComponent<RectTransform>();
+        bool overPanel = inventoryUI.inventoryPanel.activeSelf &&
+                         RectTransformUtility.RectangleContainsScreenPoint(panelRect, eventData.position);
+
+        if (!overPanel && slotCollectible != CollectableType.NONE)
+        {
+            int id = inventoryUI.slots.IndexOf(this);
+            if (id == -1) id = inventoryUI.slotsMini.IndexOf(this);
+            if (id != -1) inventoryUI.RemoveStack(id);
         }
     }
     public void ResetColor()

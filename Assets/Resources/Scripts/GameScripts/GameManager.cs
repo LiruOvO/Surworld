@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
         }
 
         //Відкриття інвентарю
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.I))
         {
             ShowInventory();
         }

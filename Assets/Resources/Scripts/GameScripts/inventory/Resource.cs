@@ -2,13 +2,11 @@ using System.Collections;
 using UnityEngine;
 
 //Ресурс який можна добувати, з нього випадають collectible
-public class Resource : MonoBehaviour
+public class Resource : MonoBehaviour, IInteractable
 {
     [Header("Interact prompt (лише для shouldBeDestroyed = false)")]
     public GameObject interactPrompt; //ЮІ "Натисніть Е"
     public float interactRadius = 1.5f;
-    public KeyCode interactKey = KeyCode.E;
-    private Transform player;
 
     public ResourceType type;    
     public Sprite[] sprites;
@@ -31,35 +29,35 @@ public class Resource : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
         lastMineTime = -cooldownTime;
 
-        var playerObj = GameObject.FindGameObjectWithTag("Player");
-        if (playerObj != null)
-        {
-            Transform pivot = playerObj.transform.Find("Pivot");
-            player = pivot != null ? pivot : playerObj.transform;
-        }
+        if (interactPrompt != null) interactPrompt.SetActive(false);
     }
+
+    private bool grown;
+
+    void OnEnable() { InteractionManager.All.Add(this); }
+    void OnDisable() { InteractionManager.All.Remove(this); SetPrompt(false); }
 
     void Update()
     {
-        if (shouldBeDestroyed || player == null) return;
+        if (shouldBeDestroyed || spriteRenderer == null) return;
+        grown = spriteRenderer.sprite == sprites[0]
+                && Time.time > lastMineTime + cooldownTime + 0.1f;
+        if (grown) currentSpriteIndex = 0;
+    }
 
-        // Кущ повний, якщо на ньому перший спрайт і минув час після останнього збору
-        bool grown = spriteRenderer.sprite == sprites[0]
-                     && Time.time > lastMineTime + cooldownTime + 0.1f;
+    public Vector2 InteractPoint => transform.position;
+    public float InteractRadius => interactRadius;
+    public bool CanInteract => !shouldBeDestroyed && grown;
 
-        if (grown) currentSpriteIndex = 0; // синхронізуємо індекс після відростання
+    public void SetPrompt(bool visible)
+    {
+        if (interactPrompt != null) interactPrompt.SetActive(visible);
+    }
 
-        bool inRange = grown &&
-            Vector2.Distance(transform.position, player.position) <= interactRadius;
-
-        if (interactPrompt != null && interactPrompt.activeSelf != inRange)
-            interactPrompt.SetActive(inRange);
-
-        if (inRange && Input.GetKeyDown(interactKey))
-        {
-            ChangeResourceSprite(false);
-            if (audioSource != null) audioSource.Play();
-        }
+    public void Interact()
+    {
+        ChangeResourceSprite(false);
+        if (audioSource != null) audioSource.Play();
     }
 
     public bool CanInteractWith(CollectableType toolType)

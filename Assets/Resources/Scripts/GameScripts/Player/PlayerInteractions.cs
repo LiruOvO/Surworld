@@ -54,11 +54,6 @@ public class PlayerInteractions : MonoBehaviour
                     }
                 }
             }
-            if (hitCollider.tag == "NPC")
-            {
-                NPCDialogues dialogues = FindFirstObjectByType<NPCDialogues>();
-                dialogues.TalkTo(hitCollider.name, this.gameObject);
-            }
 
             if (hitCollider.tag == "Enemy")
             {

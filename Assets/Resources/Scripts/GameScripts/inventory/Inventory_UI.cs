@@ -15,6 +15,18 @@ public class Inventory_UI : MonoBehaviour
 
 
     private Slot_UI selectedSlot = null;
+
+    //Вибір слота при натисканні на 1-0
+    void Update()
+    {
+        for (int i = 0; i < slotsMini.Count && i < 10; i++)
+        {
+            // слоти 1-9 це клавіші 1-9, десятий слот це клавіша 0
+            KeyCode key = (i == 9) ? KeyCode.Alpha0 : KeyCode.Alpha1 + i;
+            if (Input.GetKeyDown(key))
+                HandleSlotSelection(slotsMini[i]);
+        }
+    }
     //Виділення натиснутого слота
     public void HandleSlotSelection(Slot_UI clickedSlot)
     {
@@ -28,7 +40,8 @@ public class Inventory_UI : MonoBehaviour
             slot.ResetColor();
         }
 
-        if (clickedSlot == selectedSlot) {
+        if (clickedSlot == selectedSlot)
+        {
             selectedSlot = null;//прибирання кольору зі слота
             interactions.selectedItem = CollectableType.NONE;
             playerPartsAnimation.SetCollectibleSprites(null);
@@ -76,25 +89,22 @@ public class Inventory_UI : MonoBehaviour
 
     //Оновлення ЮІ інвентарю
     public void Refresh()
-    {        
+    {
         if (slots.Count == player.inventory.slots.Count)
         {
-           for (int i = 0; i < slots.Count; i++)
-           {
+            for (int i = 0; i < slots.Count; i++)
+            {
                 if (player.inventory.slots[i].type != CollectableType.NONE)
                 {
                     slots[i].SetItem(player.inventory.slots[i]);
-                    if (i < 7) 
-                    {
-                        slotsMini[i].SetItem(player.inventory.slots[i]);
-                    }
+                    if (i < slotsMini.Count) slotsMini[i].SetItem(player.inventory.slots[i]);
                 }
                 else
                 {
                     slots[i].SetEmpty();
-                    if (i < 7) slotsMini[i].SetEmpty();
-                }                
-           }
+                    if (i < slotsMini.Count) slotsMini[i].SetEmpty();
+                }
+            }
         }
     }
 
@@ -169,6 +179,39 @@ public class Inventory_UI : MonoBehaviour
 
             }
         }
+    }
+
+    // Викидає весь стак зі слота при перетягуванні
+    public void RemoveStack(int slotID)
+    {
+        if (slotID < 0 || slotID >= player.inventory.slots.Count) return;
+
+        Inventory.Slot slot = player.inventory.slots[slotID];
+        if (slot.type == CollectableType.NONE) return;
+
+        Collectable itemToDrop = ItemManager.Instance.GetItemByType(slot.type);
+        if (itemToDrop == null) return;
+
+        int amount = slot.count;
+        for (int i = 0; i < amount; i++)
+            player.DropItem(itemToDrop);
+
+        player.inventory.slots[slotID] = new Inventory.Slot(); // повне очищення слота
+
+        // Якщо викинули предмет, який тримала рука, знімаємо виділення
+        bool wasSelected = selectedSlot != null &&
+            (selectedSlot == slots[slotID] ||
+             (slotID < slotsMini.Count && selectedSlot == slotsMini[slotID]));
+        if (wasSelected)
+        {
+            selectedSlot = null;
+            interactions.selectedItem = CollectableType.NONE;
+            playerPartsAnimation.SetCollectibleSprites(null);
+            foreach (Slot_UI s in slots) s.ResetColor();
+            foreach (Slot_UI s in slotsMini) s.ResetColor();
+        }
+
+        Refresh();
     }
 
 }

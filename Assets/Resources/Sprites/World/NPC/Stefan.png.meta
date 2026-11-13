@@ -132,9 +132,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 48
-        height: 48
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,10 +153,10 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 0
-        width: 48
-        height: 48
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,6 +165,28 @@ TextureImporter:
       bones: []
       spriteID: 7f05732c9e1ffa047b2fc63ff54abcd7
       internalID: -268410954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stefan_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e5e5218f2f2e247814a7f18e6f7d57
+      internalID: 1473313598
       vertices: []
       indices: 
       edges: []
@@ -185,6 +207,7 @@ TextureImporter:
     nameFileIdTable:
       Stefan_0: 3487877500062557965
       Stefan_1: -268410954
+      Stefan_2: 1473313598
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -132,9 +132,9 @@ TextureImporter:
         x: 0
         y: 0
         width: 48
-        height: 48
+        height: 38
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,10 +153,10 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 0
-        width: 48
-        height: 48
+        width: 16
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -165,6 +165,28 @@ TextureImporter:
       bones: []
       spriteID: 929b4d35a2cb0fd4a9055f47fbc96ce4
       internalID: -1905694038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Jonathan_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 093a1ac4f9faa044a964b05371b5cb97
+      internalID: 1514063442
       vertices: []
       indices: 
       edges: []
@@ -185,6 +207,7 @@ TextureImporter:
     nameFileIdTable:
       Jonathan_0: 4138130560931457409
       Jonathan_1: -1905694038
+      Jonathan_2: 1514063442
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

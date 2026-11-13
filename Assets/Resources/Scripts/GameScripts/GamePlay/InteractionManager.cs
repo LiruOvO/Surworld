@@ -29,6 +29,11 @@ public class InteractionManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(interactKey))
+        {
+            Debug.Log($"E натиснуто. Усього: {All.Count}, current: {(current as MonoBehaviour)?.name ?? "НЕМАЄ"}");
+            current?.Interact();
+        }
         if (current != null && !All.Contains(current)) current = null;
 
         IInteractable best = null;
